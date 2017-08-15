@@ -20,7 +20,6 @@ class LifeGenerator extends Base
 
     public function residence()
     {
-
         View::create('my-residence', 'Get the D.R.E.A.M. Life you are looking for!');
     }
 
