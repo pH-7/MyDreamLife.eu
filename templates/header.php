@@ -19,17 +19,19 @@
 <body>
   <nav class="light-orange lighten-1" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">MyDreamLife.EU</a>
+      <a id="logo-container" href="<?php echo site_url() ?>" class="brand-logo">MyDreamLife.EU</a>
     </div>
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Get your Dream Life!</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Build a new way of Life, Step-by-Step</h5>
-      </div>
-    </div>
-  </div>
 
-<div class="container">
+  <?php if (Route::isHomepage()): ?>
+      <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+          <h1 class="header center orange-text">Get your Dream Life!</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">Build a new way of Life, Step-by-Step</h5>
+          </div>
+        </div>
+      </div>
+  <?php endif ?>
+
+  <div class="container">
