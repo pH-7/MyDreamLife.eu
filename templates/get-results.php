@@ -7,4 +7,4 @@
             <i class="material-icons right">send</i> Get My LIFE itinerary
         </button>
     </form>
-</div
+</div>

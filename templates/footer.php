@@ -4,34 +4,23 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
+          <h5 class="white-text"><span class="underline">MyDreamLife</span>.eu</h5>
+          <p class="grey-text text-lighten-4">
+              <a href="<?php echo SITE_URL ?>">MyDreamLife</a> gives a full TODO-list and Itinerary for a new amazing life elsewhere. It is designed for European people from 18 to 30 years old (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who wants to move and try a new life abroad but don't know the process to do it.
+          </p>
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+            <!-- Text Block -->
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+            <!-- Text Block -->
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
       </div>
     </div>
   </footer>

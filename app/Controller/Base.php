@@ -9,6 +9,13 @@ class Base
     public $root = './app/models/';
     public $name;
 
+    public function __construct()
+    {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            @session_start();
+        }
+    }
+
     public function notFound()
     {
         header('HTTP/1.1 404 Not Found');

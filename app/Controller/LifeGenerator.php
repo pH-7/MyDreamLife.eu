@@ -14,13 +14,14 @@ class LifeGenerator extends Base
 {
     public function __construct()
     {
-        session_start();
+        parent::__construct();
+
         //$this->loadModel('kik');
     }
 
     public function residence()
     {
-        View::create('my-residence', 'Get the D.R.E.A.M. Life you are looking for!');
+        View::create('my-residence', 'Get the D.R.E.A.M. Life I Am Looking For!');
     }
 
     public function nationality()
@@ -37,7 +38,7 @@ class LifeGenerator extends Base
 
     public function destination()
     {
-        View::create('my-destination', 'The destination you wish to go');
+        View::create('my-destination', 'The Destination I Wish to Go');
 
         $nationality = Input::post('nationality');
         if ($nationality) {
@@ -47,9 +48,9 @@ class LifeGenerator extends Base
         }
     }
 
-    public function age()
+    public function gender()
     {
-        View::create('my-age', 'My Age');
+        View::create('my-gender', 'My Sex');
 
         $destination = Input::post('destination');
         if ($destination) {
@@ -59,15 +60,15 @@ class LifeGenerator extends Base
         }
     }
 
-    public function gender()
+    public function age()
     {
-        View::create('my-gender', 'My Sex');
+        View::create('my-age', 'My Age');
 
-        $age = Input::post('age');
-        if ($age) {
-            $_SESSION['age'] = $age;
+        $gender = Input::post('gender');
+        if ($gender) {
+            $_SESSION['gender'] = $gender;
         } else {
-            redirect('my-age');
+            redirect('my-gender');
         }
     }
 
@@ -75,11 +76,11 @@ class LifeGenerator extends Base
     {
         View::create('my-lifestyle', 'My Lifestyle');
 
-        $gender = Input::post('gender');
-        if ($gender) {
-            $_SESSION['gender'] = $gender;
+        $age = Input::post('age');
+        if ($age) {
+            $_SESSION['age'] = $age;
         } else {
-            redirect('my-gender');
+            redirect('my-age');
         }
     }
 
@@ -95,9 +96,9 @@ class LifeGenerator extends Base
         }
     }
 
-    public function saving()
+    public function job()
     {
-        View::create('my-saving', 'My Money..$$$ How much do I have..?');
+        View::create('job-type', 'Kind of Job I Want to Do');
 
         $background = Input::post('background');
         if ($background) {
@@ -107,9 +108,21 @@ class LifeGenerator extends Base
         }
     }
 
-    public function results()
+    public function saving()
     {
-        View::create('get-results', 'Get My New Life Itinerary');
+        View::create('my-saving', 'My Money..$$$ How much do I have..?');
+
+        $job = Input::post('job');
+        if ($job) {
+            $_SESSION['job'] = $job;
+        } else {
+            redirect('job-type');
+        }
+    }
+
+    public function availability()
+    {
+        View::create('availability', 'When I Am Available..?');
 
         $saving = Input::post('saving');
         if ($saving) {
@@ -117,36 +130,36 @@ class LifeGenerator extends Base
         } else {
             redirect('my-saving');
         }
+    }
 
-        $email = Input::post('email');
-        if ($email) {
-            $this->sendResultsEmail($email, $_SESSION);
+    public function results()
+    {
+        View::create('get-results', 'Get My New Life Itinerary');
+
+        $availability = Input::post('availability');
+        if ($availability) {
+            $_SESSION['availability'] = $availability;
         } else {
-            redirect('my-saving');
+            redirect('availability');
         }
     }
 
-    private function generateSmartContents(array $data)
+    public function confirmation()
     {
+        View::create('confirmation', 'Well Done!');
 
+        $email = Input::post('email');
+        if ($email) {
+            $_SESSION['email'] = $email;
+            $this->sendResultsEmail($_SESSION);
+        } else {
+            redirect('get-results');
+        }
     }
 
-    /**
-     * @param string $email
-     * @param array $vars
-     */
-    private function sendResultsEmail(string $email, array $vars)
+    private function generateSmartContents(array $data): string
     {
-        $from = ADMIN_EMAIL;
-        $to = $email;
-        $body = $this->generateSmartContents($vars);
-
-        $subject = 'Someone wants to meet you';
-        $headers = "From: " . ADMIN_EMAIL . "\r\n";
-        $headers .= "Reply-To: " . $from . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
+        /*$message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
         $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
         $message .= '</div>';
         $message .= 'Hey' . $likedUser->user_name . '! ' . $userData->user_name . ' likes your photo and so interested to meet you.<br />';
@@ -154,8 +167,26 @@ class LifeGenerator extends Base
         $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
         $message .= '&copy; Kik or not</a><br /><br />';
         $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
-        $message .= '</div>';
+        $message .= '</div>';*/
 
-        mail($to, $subject, $message, $headers);
+        $message = print_r($data, true);
+
+        return $message;
+    }
+
+    private function sendResultsEmail(array $vars)
+    {
+        $from = ADMIN_EMAIL;
+        $to = $vars['email'];
+        $body = $this->generateSmartContents($vars);
+
+        $subject = 'New DREAM-LIFE Application';
+        $headers = "From: " . ADMIN_EMAIL . "\r\n";
+        $headers .= "Reply-To: " . $from . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $message = $this->generateSmartContents($vars);
+
+        mail(ADMIN_EMAIL, $subject, $message, $headers);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 'on');
 define('APP_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 require 'config/site.php';
