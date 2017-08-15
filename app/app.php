@@ -23,14 +23,19 @@ function autoloadController($className) {
 spl_autoload_register('autoloadController');
 
 
-// Let's run the app!
-$route = new Route();
-require 'routes.php';
+try {
+    // Let's run the app!
+    $route = new Route();
+    require 'routes.php';
 
-Main::store();
-Database::connect(Main::get('db'));
-User::store();
+    Main::store();
+    Database::connect(Main::get('db'));
+    User::store();
 
-$route->run(); // Last one, run the URI router
+    $route->run(); // Last one, run the URI router
+} catch (Exception $except) {
+    echo $except->getMessage();
+}
+
 
 

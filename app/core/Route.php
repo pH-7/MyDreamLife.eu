@@ -16,37 +16,18 @@ class Route
     /** @var array */
     private $_class = array();
 
-    /**
-     * @param string $uri
-     * @param string $method
-     */
-    public function get($uri, $method = '')
-    {
-        if ($_SERVER['REQUEST_METHOD'] !== self::GET_METHOD) {
-            throw new InvalidArgumentException('HTTP Method Must be GET');
-        }
-
-        $this->add($uri, $method);
-    }
-
-    /**
-     * @param string $uri
-     * @param string $method
-     */
-    public function post($uri, $method = '')
+    public static function onlyPostMethod()
     {
         if ($_SERVER['REQUEST_METHOD'] !== self::POST_METHOD) {
             throw new InvalidArgumentException('HTTP Method Must be POST');
         }
-
-        $this->add($uri, $method);
     }
 
     /**
      * @param string $uri
      * @param string $method
      */
-    private function add($uri, $method = '')
+    public function add($uri, $method = '')
     {
         $this->_uri[] = '/' . trim($uri, '/');
         $this->_method[] = $method;
