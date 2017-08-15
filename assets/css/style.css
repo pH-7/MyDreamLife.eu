@@ -1,0 +1,18 @@
+.flag.icon, .gender.icon {
+    max-width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+.flag.icon, .destination, .age-range, .lifestyle-topic, .education, .saving {
+    display: inline-block;
+}
+
+.destination, .age-range, .lifestyle-topic, .education, .saving {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.container form .center {
+    margin-bottom: 50px;
+}
