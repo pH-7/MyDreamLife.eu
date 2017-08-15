@@ -5,7 +5,12 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-class LifeGenerator extends BaseController
+namespace Controller;
+
+use View;
+use Input;
+
+class LifeGenerator extends Base
 {
     public function __construct()
     {
@@ -15,13 +20,12 @@ class LifeGenerator extends BaseController
 
     public function residence()
     {
+
         View::create('my-residence', 'Get the D.R.E.A.M. Life you are looking for!');
     }
 
     public function nationality()
     {
-        Route::onlyPostMethod();
-
         View::create('my-nationality', 'My Nationality');
 
         $residence = Input::post('residence');
@@ -34,8 +38,6 @@ class LifeGenerator extends BaseController
 
     public function destination()
     {
-        Route::onlyPostMethod();
-
         View::create('my-destination', 'The destination you wish to go');
 
         $nationality = Input::post('nationality');
@@ -48,8 +50,6 @@ class LifeGenerator extends BaseController
 
     public function age()
     {
-        Route::onlyPostMethod();
-
         View::create('my-age', 'My Age');
 
         $destination = Input::post('destination');
@@ -62,8 +62,6 @@ class LifeGenerator extends BaseController
 
     public function gender()
     {
-        Route::onlyPostMethod();
-
         View::create('my-gender', 'My Sex');
 
         $age = Input::post('age');
@@ -76,8 +74,6 @@ class LifeGenerator extends BaseController
 
     public function lifestyle()
     {
-        Route::onlyPostMethod();
-
         View::create('my-lifestyle', 'My Lifestyle');
 
         $gender = Input::post('gender');
@@ -90,8 +86,6 @@ class LifeGenerator extends BaseController
 
     public function background()
     {
-        Route::onlyPostMethod();
-
         View::create('my-background', 'My Background..?');
 
         $lifestyle = Input::post('lifestyle');
@@ -104,8 +98,6 @@ class LifeGenerator extends BaseController
 
     public function saving()
     {
-        Route::onlyPostMethod();
-
         View::create('my-saving', 'My Money..$$$ How much do I have..?');
 
         $background = Input::post('background');
@@ -118,9 +110,7 @@ class LifeGenerator extends BaseController
 
     public function results()
     {
-        Route::onlyPostMethod();
-
-        View::create('my-results', 'Get My New Life Itinerary');
+        View::create('get-results', 'Get My New Life Itinerary');
 
         $saving = Input::post('saving');
         if ($saving) {
@@ -135,13 +125,6 @@ class LifeGenerator extends BaseController
         } else {
             redirect('my-saving');
         }
-    }
-
-    public function notFound()
-    {
-        header('HTTP/1.1 404 Not Found');
-
-        View::create('not-found', 'Page Not Found');
     }
 
     private function generateSmartContents(array $data)

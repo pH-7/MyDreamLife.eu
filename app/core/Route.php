@@ -1,5 +1,7 @@
 <?php
 
+use Controller\Base as BaseController;
+
 class Route
 {
     const GET_METHOD = 'GET';

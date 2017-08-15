@@ -1,9 +1,20 @@
 <?php
 
-class BaseController
+namespace Controller;
+
+use View;
+
+class Base
 {
     public $root = './app/models/';
     public $name;
+
+    public function notFound()
+    {
+        header('HTTP/1.1 404 Not Found');
+
+        View::create('not-found', 'Page Not Found');
+    }
 
     public function loadModel($name)
     {

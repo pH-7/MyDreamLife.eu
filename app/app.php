@@ -14,7 +14,9 @@ require 'core/Input.php';
 require 'core/Hash.php';
 
 function autoloadController($className) {
-    $filename = APP_PATH . 'controllers/' . $className . '.php';
+    $className = str_replace('\\', '/', $className);
+
+    $filename = APP_PATH . $className . '.php';
     if (is_readable($filename)) {
         require $filename;
     }
