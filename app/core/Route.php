@@ -9,64 +9,56 @@ class Route
     const PUT_METHOD = 'PUT';
     const DELETE_METHOD = 'DELETE';
 
-    /** @var array */
-    private $_uri = array();
+    private static $httpMethod = self::GET_METHOD;
 
-    /** @var array */
-    private $_method = array();
-
-    /** @var array */
-    private $_class = array();
-
-    public static function onlyPostMethod()
+    public static function get(string $uri, string $classMethod = '')
     {
-        if ($_SERVER['REQUEST_METHOD'] !== self::POST_METHOD) {
-            throw new InvalidArgumentException('HTTP Method Must be POST');
-        }
+        self::$httpMethod = self::GET_METHOD;
+
+        self::run($uri, $classMethod);
+    }
+
+    public static function post(string $uri, string $classMethod = '')
+    {
+        self::$httpMethod = self::POST_METHOD;
+        self::run($uri, $classMethod);
+    }
+
+    public static function isHomepage(): bool
+    {
+        return empty($_GET['uri']);
     }
 
     /**
      * @param string $uri
-     * @param string $method
+     * @param string $function
+     *
+     * @return mixed
      */
-    public function add($uri, $method = '')
+    private static function run(string $uri, string $function)
     {
-        $this->_uri[] = '/' . trim($uri, '/');
-        $this->_method[] = $method;
-    }
+        $uri = '/' . trim($uri, '/');
+        $url = !empty($_GET['uri']) ? '/' . $_GET['uri'] : '/';
 
-    public function run()
-    {
-        $url = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';
-        foreach ($this->_uri as $key => $value) {
-            if (preg_match("#^$value$#", $url, $params)) {
-                $method = $this->_method[$key];
-                if (strpos($method, '@')) {
-                    $split = explode('@', $method);
-                    $this->_class[] = $split[0];
-                    $this->_function[] = $split[1];
-                } else {
-                    $this->_method[] = $method;
-                    $this->_function[] = null;
-                }
-                if (empty($method)) {
-                    echo 'Please make sure your route is calling a class function.';
-                } else {
-                    $class = new $this->_class[0];
-                    $classFunction = $this->_function[0];
-                    if (method_exists($class, $classFunction)) {
-                        foreach ($params as $k => $v) {
-                            $params[$k] = str_replace('/', '', $v);
-                        }
-                        return call_user_func_array(array($class, $classFunction), $params);
-                    } else {
-                        echo 'Function <b>' . $classFunction . '</b> was not found in the class <b>' . $this->_class[0] . '</b>';
-                        exit;
-                    }
-                }
+        if (preg_match("#^$uri$#", $url, $params)) {
+            if ($_SERVER['REQUEST_METHOD'] !== self::$httpMethod) {
+                //throw new InvalidArgumentException(sprintf('HTTP Method Must be %s', self::$httpMethod));
+                (new BaseController)->notFound();
             }
+
+            $split = explode('@', $function);
+            $className = 'Controller\\' . $split[0];
+            $method = $split[1];
+
+            $class = new $className;
+            if (method_exists($class, $method)) {
+                foreach ($params as $k => $v) {
+                    $params[$k] = str_replace('/', '', $v);
+                }
+                return call_user_func_array(array($class, $method), $params);
+            }
+           //throw new RuntimeException('Method "' . $method . '" was not found in "' . $class . '" class.');
+           (new BaseController)->notFound();
         }
-        // If didn't return a found method, we display the 404 page
-        (new Kik)->notFound();
     }
 }

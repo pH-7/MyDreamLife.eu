@@ -26,15 +26,12 @@ spl_autoload_register('autoloadController');
 
 
 try {
-    // Let's run the app!
-    $route = new Route();
     require 'routes.php';
 
     Main::store();
     Database::connect(Main::get('db'));
-    User::store();
 
-    $route->run(); // Last one, run the URI router
+
 } catch (Exception $except) {
     echo $except->getMessage();
 }

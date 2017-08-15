@@ -1,12 +1,13 @@
 <?php
 
-$route->add('/', 'LifeGenerator@residence');
-$route->add('/my-nationality', 'LifeGenerator@nationality');
-$route->add('/my-destination', 'LifeGenerator@destination');
-$route->add('/my-gender', 'LifeGenerator@gender');
-$route->add('/my-age', 'LifeGenerator@age');
-$route->add('/my-lifestyle', 'LifeGenerator@lifestyle');
-$route->add('/my-background', 'LifeGenerator@background');
-$route->add('/my-lifestyle', 'LifeGenerator@lifestyle');
-$route->add('/my-saving', 'LifeGenerator@saving');
-$route->add('/get-results', 'LifeGenerator@results');
+Route::get('/', 'LifeGenerator@residence');
+Route::post('/my-nationality', 'LifeGenerator@nationality');
+Route::post('/my-destination', 'LifeGenerator@destination');
+Route::post('/my-gender', 'LifeGenerator@gender');
+Route::post('/my-age', 'LifeGenerator@age');
+Route::post('/my-lifestyle', 'LifeGenerator@lifestyle');
+Route::post('/my-background', 'LifeGenerator@background');
+Route::post('/my-lifestyle', 'LifeGenerator@lifestyle');
+Route::post('/my-saving', 'LifeGenerator@saving');
+Route::post('/get-results', 'LifeGenerator@results');
+Route::post('/confirmation', 'LifeGenerator@confirmation');
