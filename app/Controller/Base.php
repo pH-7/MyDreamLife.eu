@@ -24,10 +24,4 @@ class Base
 
         View::create('not-found', 'Page Not Found');
     }
-
-    public function modelFunction($func, array $vars = array())
-    {
-        $className = $this->name . '_model';
-        return call_user_func_array(array(new $className, $func), $vars);
-    }
 }
