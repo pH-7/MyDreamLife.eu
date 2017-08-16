@@ -31,7 +31,7 @@
       </div>
     </div>
   </footer>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php echo site_url('node_modules/materialize-css/dist/js/materialize.min.js') ?>"></script>
 </body>
 </html>
