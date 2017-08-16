@@ -23,13 +23,6 @@ class Base
         View::create('not-found', 'Page Not Found');
     }
 
-    public function loadModel($name)
-    {
-        $modelFile = $this->root . $name . '_model.php';
-        require $modelFile;
-        $this->name = $name;
-    }
-
     public function modelFunction($func, array $vars = array())
     {
         $className = $this->name . '_model';
