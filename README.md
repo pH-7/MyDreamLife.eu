@@ -12,6 +12,12 @@ The AI app will give them ste-by-step the whole map for starting & doing it!
 * **Database** MySQL/MariaDB 5.0.3 or newer
 
 
-## Inventor & Author
+## Inventor & Author of MyDreamLife.EU
 
 My name is [Pierre-Henry Soria](http://ph7.me) :smiley:
+You can contact me at: *hi {{AT}} ph7 {{D0T}} me*
+
+
+## License
+
+Under [General Public License 3](http://www.gnu.org/licenses/gpl.html) or later.
