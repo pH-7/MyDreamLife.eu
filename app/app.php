@@ -1,17 +1,19 @@
 <?php
+/**
+ * @author         Pierre-Henry Soria <hi@ph7.me>
+ * @copyright      (c) 2017, Pierre-Henry Soria. All Rights Reserved.
+ * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
+ */
+
+use Core\Main;
+use Core\Database;
+
 ini_set('display_errors', 'on');
+
 define('APP_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 require 'config/site.php';
 require 'helpers.php';
-require 'core/Route.php';
-require 'core/Database.php';
-require 'core/Main.php';
-require 'core/View.php';
-require 'core/User.php';
-require 'core/Session.php';
-require 'core/Input.php';
-require 'core/Hash.php';
 
 function autoloadClasses($className) {
     $className = str_replace('\\', '/', $className);
