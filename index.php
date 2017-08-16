@@ -5,4 +5,6 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
+ob_start();
 require 'app/app.php';
+ob_end_flush();
