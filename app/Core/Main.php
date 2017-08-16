@@ -5,7 +5,7 @@ namespace Core;
 class Main
 {
     /** @var array */
-    private static $_config = array();
+    private static $config = array();
 
     /**
      * @return bool|string
@@ -22,9 +22,9 @@ class Main
      */
     public static function store()
     {
-        if (empty(static::$_config)) {
+        if (empty(static::$config)) {
             include_once APP_PATH . 'config/config.php';
-            static::$_config = $config;
+            static::$config = $config;
         }
     }
 
@@ -39,9 +39,9 @@ class Main
     public static function get($key, $secondKey = '')
     {
         if (empty($secondKey)) {
-            return isset(static::$_config[$key]) ? static::$_config[$key] : false;
+            return isset(static::$config[$key]) ? static::$config[$key] : false;
         } else {
-            return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : false;
+            return isset(static::$config[$key][$secondKey]) ? static::$config[$key][$secondKey] : false;
         }
     }
 

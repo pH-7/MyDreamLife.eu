@@ -26,7 +26,7 @@ class User
     public static function userName()
     {
         if (static::loggedIn()) {
-            return static::$_userData->user_name;
+            return static::$userData->user_name;
         }
     }
 
@@ -44,7 +44,7 @@ class User
     public static function userPicture()
     {
         if (static::loggedIn()) {
-            return static::$_userData->user_avatar;
+            return static::$userData->user_avatar;
         }
     }
 
