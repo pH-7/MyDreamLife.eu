@@ -9,9 +9,9 @@ class Hash
     /**
      * Hashes a string.
      *
-     * @param  string $string The string to hash
+     * @param string $string The string to hash
      *
-     * @return string         The hashed string
+     * @return string The hashed string
      */
 
     public static function generate($string)
@@ -25,10 +25,10 @@ class Hash
     /**
      * Compares a string to a hash.
      *
-     * @param  string $string The string
-     * @param  string $hash The Hash
+     * @param string $string The string
+     * @param string $hash The Hash
      *
-     * @return boolean        Does it match?
+     * @return bool Does it match?
      */
     public static function compare($string, $hash)
     {
