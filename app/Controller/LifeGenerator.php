@@ -31,7 +31,7 @@ class LifeGenerator extends Base
 
         $residence = Input::post('residence');
         if ($residence) {
-            $_SESSION['residence'] = $residence;
+            Session::set('residence', $residence);
         } else {
             redirect('my-residence');
         }
@@ -43,7 +43,7 @@ class LifeGenerator extends Base
 
         $nationality = Input::post('nationality');
         if ($nationality) {
-            $_SESSION['nationality'] = $nationality;
+            Session::set('nationality', $nationality);
         } else {
             redirect('my-nationality');
         }
@@ -55,7 +55,7 @@ class LifeGenerator extends Base
 
         $destination = Input::post('destination');
         if ($destination) {
-            $_SESSION['destination'] = $destination;
+            Session::set('destination', $destination);
         } else {
             redirect('my-destination');
         }
@@ -67,7 +67,7 @@ class LifeGenerator extends Base
 
         $gender = Input::post('gender');
         if ($gender) {
-            $_SESSION['gender'] = $gender;
+            Session::set('gender', $gender);
         } else {
             redirect('my-gender');
         }
@@ -79,7 +79,7 @@ class LifeGenerator extends Base
 
         $age = Input::post('age');
         if ($age) {
-            $_SESSION['age'] = $age;
+            Session::set('age', $age);
         } else {
             redirect('my-age');
         }
@@ -91,7 +91,7 @@ class LifeGenerator extends Base
 
         $lifestyle = Input::post('lifestyle');
         if ($lifestyle) {
-            $_SESSION['lifestyle'] = $lifestyle;
+            Session::set('lifestyle', $lifestyle);
         } else {
             redirect('my-lifestyle');
         }
@@ -103,7 +103,7 @@ class LifeGenerator extends Base
 
         $background = Input::post('background');
         if ($background) {
-            $_SESSION['background'] = $background;
+            Session::set('background', $background);
         } else {
             redirect('my-background');
         }
@@ -115,7 +115,7 @@ class LifeGenerator extends Base
 
         $job = Input::post('job');
         if ($job) {
-            $_SESSION['job'] = $job;
+            Session::set('job', $job);
         } else {
             redirect('job-type');
         }
@@ -127,7 +127,7 @@ class LifeGenerator extends Base
 
         $saving = Input::post('saving');
         if ($saving) {
-            $_SESSION['saving'] = $saving;
+            Session::set('saving', $saving);
         } else {
             redirect('my-saving');
         }
@@ -139,7 +139,7 @@ class LifeGenerator extends Base
 
         $availability = Input::post('availability');
         if ($availability) {
-            $_SESSION['availability'] = $availability;
+            Session::set('availability', $availability);
         } else {
             redirect('availability');
         }
