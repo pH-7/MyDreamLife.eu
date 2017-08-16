@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "flag-icon-css": "^2.8.0",
+    "material-icons": "^0.1.0",
     "materialize-css": "^0.100.1"
   },
   "devDependencies": {},
