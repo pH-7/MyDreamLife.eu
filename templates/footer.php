@@ -20,7 +20,14 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
+          <div class="row">
+              <div class="col l9 s12">
+                  Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
+              </div>
+              <div class="col l3 s12">
+                  <a class="orange-text text-lighten-3" href="mailto:hi@ph7.me?subject=Regarding MyDreamLife">Contact</a>
+              </div>
+          </div>
       </div>
     </div>
   </footer>
