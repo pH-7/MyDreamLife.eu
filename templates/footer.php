@@ -6,7 +6,7 @@
         <div class="col l6 s12">
           <h5 class="white-text"><span class="underline">MyDreamLife</span>.eu</h5>
           <p class="grey-text text-lighten-4">
-              <a href="<?php echo SITE_URL ?>">MyDreamLife</a> gives a full TODO-list and Itinerary for a new amazing life elsewhere. It is designed for European people from 18 to 30 years old (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who wants to move and try a new life abroad but don't know the process to do it.
+              <a href="<?php echo SITE_URL ?>">MyDreamLife</a> gives a full TODO-list and Itinerary for a new amazing life elsewhere. It is designed for European people from 18 to 30 years old (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who want to move and try a new life abroad.
           </p>
 
         </div>

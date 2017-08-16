@@ -1,8 +1,8 @@
 # MyDreamLife
 
-MyDreamLife is a side-project I created to give a TODO-list, and Itinerary for their new life. It is designed for European people from 18 to 30 (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who wants to move and try a new life abroad but don't know the process to do it.
+MyDreamLife is a side-project I created to give a TODO-list, and Itinerary for a new (exciting) life. It is designed for European people from 18 to 30 (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who want to move and try a new life abroad but don't know the process to do it.
 
-The AI app will give them ste-by-step the whole map for starting & doing it!
+The artificial intelligence app will give them, ste-by-step, the whole map for starting their dream life & doing it!
 
 
 ## Requirements
