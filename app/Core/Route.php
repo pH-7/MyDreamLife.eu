@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 use Controller\Base as BaseController;
 
 class Route

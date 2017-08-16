@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class User
 {
     const KIK_AVATAR_URL = 'https://www.kik.me/u/';

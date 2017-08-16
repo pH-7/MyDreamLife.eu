@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Main
 {
     /** @var array */

@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Hash
 {
     const REPEAT_HASH = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

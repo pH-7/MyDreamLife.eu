@@ -23,7 +23,7 @@
     </div>
   </nav>
 
-  <?php if (Route::isHomepage()): ?>
+  <?php if (Core\Route::isHomepage()): ?>
       <div class="section no-pad-bot" id="index-banner">
         <div class="container">
           <h1 class="header center orange-text">Get your Dream Life!</h1>

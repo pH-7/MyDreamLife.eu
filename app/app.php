@@ -26,12 +26,10 @@ spl_autoload_register('autoloadClasses');
 
 
 try {
-    require 'routes.php';
-
     Main::store();
     Database::connect(Main::get('db'));
 
-
+    require 'routes.php';
 } catch (Exception $except) {
     echo $except->getMessage();
 }
