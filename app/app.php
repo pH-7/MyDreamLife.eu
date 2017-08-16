@@ -13,7 +13,7 @@ require 'core/Session.php';
 require 'core/Input.php';
 require 'core/Hash.php';
 
-function autoloadController($className) {
+function autoloadClasses($className) {
     $className = str_replace('\\', '/', $className);
 
     $filename = APP_PATH . $className . '.php';
@@ -22,7 +22,7 @@ function autoloadController($className) {
     }
 }
 
-spl_autoload_register('autoloadController');
+spl_autoload_register('autoloadClasses');
 
 
 try {
