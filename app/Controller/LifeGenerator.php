@@ -151,11 +151,27 @@ class LifeGenerator extends Base
 
         $email = Input::post('email');
         if ($email) {
-            $_SESSION['email'] = $email;
+            Session::set('email', $email);
             $this->sendResultsEmail($_SESSION);
         } else {
             redirect('get-results');
         }
+
+        $data = [
+            'email' => Session::get('email'),
+            'residence' => Session::get('residence'),
+            'nationality' => Session::get('nationality'),
+            'destination' => Session::get('destination'),
+            'gender' => Session::get('gender'),
+            'age' => Session::get('age'),
+            'lifestyle' => Session::get('lifestyle'),
+            'background' => Session::get('background'),
+            'job' => Session::get('job'),
+            'saving' => Session::get('saving'),
+            'availability' => Session::get('availability')
+        ];
+
+        \Model\Itinerary::insert($data);
     }
 
     private function generateSmartContents(array $data): string
