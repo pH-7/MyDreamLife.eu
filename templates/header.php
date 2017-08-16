@@ -5,8 +5,11 @@
     <title><?php echo SITE_NAME; ?> &mdash; <?php echo $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="<?php echo site_url('node_modules/materialize-css/dist/css/materialize.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('node_modules/material-icons/css/material-icons.min.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('node_modules/flag-icon-css/css/flag-icon.min.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/style.css') ?>">
     <?php include 'analytics.inc.php' ?>
