@@ -23,6 +23,7 @@ After the payment made, I sadly noticed my mistake but it was already too late..
 My name is [Pierre-Henry Soria](http://ph7.me) :smiley:
 You can contact me at: *hi {{AT}} ph7 {{D0T}} me*
 
+![MyDreamLife Homepage Screenshot](screenshots/MyNewDream-web-app-homepage.png)
 
 ## License
 
