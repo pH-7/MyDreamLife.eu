@@ -10,17 +10,17 @@ class User
     /**
      * @return string|void
      */
-    public static function userName()
+    public static function getName()
     {
         if (static::loggedIn()) {
-            return static::$userData->user_name;
+            return static::$userData->name;
         }
     }
 
     /**
      * @return string|bool
      */
-    public static function loggedIn()
+    public static function isLoggedIn()
     {
         return Session::showCookie('loggedIn');
     }
@@ -28,20 +28,20 @@ class User
     /**
      * @return string
      */
-    public static function userPicture()
+    public static function getPicture()
     {
         if (static::loggedIn()) {
-            return static::$userData->user_avatar;
+            return static::$userData->userPicture;
         }
     }
 
     /**
      * @return int
      */
-    public static function userId()
+    public static function getId()
     {
         if (static::loggedIn()) {
-            return static::$userData->user_id;
+            return static::$userData->userId;
         }
     }
 }
