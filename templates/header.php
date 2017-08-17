@@ -29,9 +29,9 @@
   <?php if (Core\Route::isHomepage()): ?>
       <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-          <h1 class="header center orange-text">Get your Dream Life!</h1>
+          <h1 class="header center orange-text">Get Your Dream Life!</h1>
           <div class="row center">
-            <h5 class="header col s12 light">Build a new life, Step-by-Step</h5>
+            <h5 class="header col s12 light">Build A New Life, Step-by-Step</h5>
               <h6>The FIRST European Platform that gives a real full itinerary for starting a new exciting life from scratch</h6>
           </div>
         </div>

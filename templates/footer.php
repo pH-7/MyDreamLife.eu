@@ -1,4 +1,12 @@
-  </div>
+  <?php if (Core\Route::isHomepage()): ?>
+      <p>MyDreamLife is the <strong>simplest web app</strong> that gives a friendly, understandable and accurate itinerary that guides you in <strong>starting your new life</strong>.</p>
+
+    <p>
+        The <strong>New Life Itinerary</strong> that you will receive is <strong>made by an expat specialist</strong> (<strong>a human</strong> helped by artificial intelligence tools).<br />
+      The Itinerary contains the training to reach your goals (if needed), job positions, best destination(s) for you, best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
+    </p>
+  <?php endif ?>
+</div>
   
   <footer class="page-footer light-orange">
     <div class="container">
