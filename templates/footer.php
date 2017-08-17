@@ -1,5 +1,5 @@
   <?php if (Core\Route::isHomepage()): ?>
-      <p>MyDreamLife is the <strong>simplest web app</strong> that gives a friendly, understandable and accurate itinerary that guides you in <strong>starting your new life</strong>.</p>
+      <p>MyNewDream is the <strong>simplest web app</strong> that gives a friendly, understandable and accurate itinerary that guides you in <strong>starting your new life</strong>.</p>
 
     <p>
         The <strong>New Life Itinerary</strong> that you will receive is <strong>made by an expat specialist</strong> (<strong>a human</strong> helped by artificial intelligence tools).<br />
@@ -12,9 +12,9 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text"><span class="underline">MyDreamLife</span>.eu</h5>
+          <h5 class="white-text"><span class="underline">MyNewDream</span>.eu</h5>
           <p class="grey-text text-lighten-4">
-              <a href="<?php echo SITE_URL ?>">MyDreamLife</a> gives a full TODO-list and Itinerary for a new amazing life elsewhere. It is designed for European people from 18 to 30 years old (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who want to move and try a new life abroad.
+              <a href="<?php echo SITE_URL ?>">MyNewDream</a> gives a full TODO-list and Itinerary for a new amazing life elsewhere. It is designed for European people from 18 to 30 years old (mainly from Spain, France, Netherlands, Belgium, Germany and Italy) who want to move and try a new life abroad.
           </p>
 
         </div>
@@ -36,7 +36,7 @@
                   Proud to be <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">100% open source</a>!
               </div>
               <div class="col l1 s12">
-                  <a class="orange-text text-lighten-3" rel="nofollow" href="mailto:hi@ph7.me?subject=Regarding MyDreamLife">Contact</a>
+                  <a class="orange-text text-lighten-3" rel="nofollow" href="mailto:hi@ph7.me?subject=Regarding MyNewDream">Contact</a>
               </div>
           </div>
       </div>

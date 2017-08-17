@@ -5,6 +5,12 @@ MyDreamLife is a side-project I created to give a TODO-list, and Itinerary for a
 The artificial intelligence app will give them, ste-by-step, the whole map for starting their dream life & doing it!
 
 
+## It's not MyDreamLife.eu, but MyNewDream.eu
+
+Although both domain names were available, I distractedly typed a different name (maybe because I was speaking to people and drinking in the same time ...).
+After the payment made, I sadly noticed my mistake but it was already too late.. Anyway, "MyDreamLife.eu" is actually "MyNewDream.eu"! There is worse in life!
+
+
 ## Requirements
 
 * **Server** PHP 7.0 or newer
