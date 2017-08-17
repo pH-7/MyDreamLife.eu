@@ -195,9 +195,9 @@ class LifeGenerator extends Base
     {
         $from = $vars['email'];
         $to = ADMIN_EMAIL;
-
         $subject = 'New DREAM-LIFE Application';
-        $headers = "From: " . $from . "\r\n";
+
+        $headers = "From: \"{$_SERVER['HTTP_HOST']}\" <{$_SERVER['SERVER_ADMIN']}>\r\n"; // To avoid the email goes to spam
         $headers .= "Reply-To: " . $from . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
