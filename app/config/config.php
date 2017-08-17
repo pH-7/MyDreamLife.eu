@@ -1,11 +1,11 @@
 <?php
 
 /** @var $config Database details */
-$config = array(
-    'db' => array(
+$config = [
+    'db' => [
         'dbHost' => 'localhost',
         'dbUser' => 'ph7cms',
         'dbPass' => 'ph7cms',
         'dbName' => 'kikornot'
-    )
-);
+    ]
+];
