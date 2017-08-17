@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use RuntimeException;
+
 class View
 {
     /**
@@ -12,19 +14,17 @@ class View
     public static function create($view, $title = '', array $data = array())
     {
         extract($data);
-        $template_url = 'templates/';
 
-        include_once $template_url . 'header.php';
+        include 'templates/header.php';
 
-        $file = $template_url . $view . '.php';
-        if (is_file($file)) {
-            include_once $template_url . $view . '.php';
+        $viewFullPath = 'templates/' . $view . '.php';
+        if (is_file($viewFullPath)) {
+            include $viewFullPath;
         } else {
-            echo 'Could not find file: <b>' . $file . '</b>';
-            exit;
+            throw new RuntimeException('Could not find view: "' . $viewFullPath . '"');
         }
 
-        include_once $template_url . 'footer.php';
+        include 'templates/footer.php';
     }
 
     /**
@@ -36,11 +36,17 @@ class View
     public static function admin($view, $title = '', $paritals = 1, array $data = array())
     {
         extract($data);
+
+        $viewFullPath = APP_PATH . 'admin/templates/' . $view . '.php';
+        if (is_file($viewFullPath)) {
+            throw new RuntimeException('Could not find view: "' . $viewFullPath . '"');
+        }
+
         if (!$paritals == 1) {
-            include APP_PATH . 'admin/templates/' . $view . '.php';
+            include $viewFullPath;
         } else {
             include APP_PATH . 'admin/templates/header.php';
-            include APP_PATH . 'admin/templates/' . $view . '.php';
+            include $viewFullPath;
             include APP_PATH . 'admin/templates/footer.php';
         }
     }
