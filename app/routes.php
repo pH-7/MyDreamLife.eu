@@ -15,7 +15,6 @@ Route::post('/my-age', 'LifeGenerator@age');
 Route::post('/my-lifestyle', 'LifeGenerator@lifestyle');
 Route::post('/my-background', 'LifeGenerator@background');
 Route::post('/job-type', 'LifeGenerator@job');
-Route::post('/my-lifestyle', 'LifeGenerator@lifestyle');
 Route::post('/my-saving', 'LifeGenerator@saving');
 Route::post('/availability', 'LifeGenerator@availability');
 Route::post('/get-results', 'LifeGenerator@results');
