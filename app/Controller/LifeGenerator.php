@@ -149,29 +149,37 @@ class LifeGenerator extends Base
     {
         View::create('confirmation', 'Well Done!');
 
-        $email = Input::post('email');
-        if ($email) {
-            Session::set('email', $email);
+        // Avoid duplication applications if form is resubmitted
+        if (Session::get('residence')) {
+            $email = Input::post('email');
+            if ($email) {
+                Session::set('email', $email);
+            } else {
+                redirect('get-results');
+            }
+
             $this->sendResultsEmail($_SESSION);
+
+            $data = [
+                'email' => Session::get('email'),
+                'residence' => Session::get('residence'),
+                'nationality' => Session::get('nationality'),
+                'destination' => Session::get('destination'),
+                'gender' => Session::get('gender'),
+                'age' => Session::get('age'),
+                'lifestyle' => Session::get('lifestyle'),
+                'background' => Session::get('background'),
+                'job' => Session::get('job'),
+                'saving' => Session::get('saving'),
+                'availability' => Session::get('availability')
+            ];
+
+            \Model\Itinerary::insert($data);
+
+            $this->removeSessions();
         } else {
-            redirect('get-results');
+            redirect('/');
         }
-
-        $data = [
-            'email' => Session::get('email'),
-            'residence' => Session::get('residence'),
-            'nationality' => Session::get('nationality'),
-            'destination' => Session::get('destination'),
-            'gender' => Session::get('gender'),
-            'age' => Session::get('age'),
-            'lifestyle' => Session::get('lifestyle'),
-            'background' => Session::get('background'),
-            'job' => Session::get('job'),
-            'saving' => Session::get('saving'),
-            'availability' => Session::get('availability')
-        ];
-
-        \Model\Itinerary::insert($data);
     }
 
     private function generateSmartContents(array $data): string
@@ -204,5 +212,12 @@ class LifeGenerator extends Base
         $message = $this->generateSmartContents($vars);
 
         mail($to, $subject, $message, $headers);
+    }
+
+    private function removeSessions()
+    {
+        $_SESSION = [];
+        session_unset();
+        session_destroy();
     }
 }
