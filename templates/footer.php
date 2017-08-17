@@ -28,7 +28,7 @@
                   Proud to be <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">100% open source</a>!
               </div>
               <div class="col l1 s12">
-                  <a class="orange-text text-lighten-3" href="mailto:hi@ph7.me?subject=Regarding MyDreamLife">Contact</a>
+                  <a class="orange-text text-lighten-3" rel="nofollow" href="mailto:hi@ph7.me?subject=Regarding MyDreamLife">Contact</a>
               </div>
           </div>
       </div>
