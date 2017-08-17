@@ -21,5 +21,6 @@ function redirect($url) {
         $url = SITE_URL . $url;
     }
 
-    header('Location: .' . $url);
+    header('Location: ' . $url);
+    exit;
 }
