@@ -8,9 +8,9 @@ class Main
     private static $config = array();
 
     /**
-     * @return bool|string
+     * @return string|bool
      */
-    public static function loggedIn()
+    public static function isLoggedIn()
     {
         return Session::showCookie('loggedIn');
     }
@@ -43,29 +43,5 @@ class Main
         } else {
             return isset(static::$config[$key][$secondKey]) ? static::$config[$key][$secondKey] : false;
         }
-    }
-
-    /**
-     * Returns the excerpt.
-     *
-     * @param string $str The incoming text
-     * @param int $startPos Optional start pos
-     * @param int $maxLength Optional max length
-     * @param string $append Optional append
-     *
-     * @return string|bool
-     */
-    public static function excerpt($str, $startPos = 0, $maxLength = 250, $append = '...')
-    {
-        if (strlen($str) > $maxLength) {
-            $excerpt = substr($str, $startPos, $maxLength - 3);
-            $lastSpace = strrpos($excerpt, ' ');
-            $excerpt = substr($excerpt, 0, $lastSpace);
-            $excerpt .= $append;
-        } else {
-            $excerpt = $str;
-        }
-
-        return $excerpt;
     }
 }
