@@ -21,10 +21,13 @@
     <div class="footer-copyright">
       <div class="container">
           <div class="row">
-              <div class="col l9 s12">
+              <div class="col l5 s12">
                   Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
               </div>
-              <div class="col l3 s12">
+              <div class="col l6 s12">
+                  Proud to be <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">100% open source</a>!
+              </div>
+              <div class="col l1 s12">
                   <a class="orange-text text-lighten-3" href="mailto:hi@ph7.me?subject=Regarding MyDreamLife">Contact</a>
               </div>
           </div>
