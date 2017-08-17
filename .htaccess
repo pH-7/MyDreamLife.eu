@@ -11,6 +11,14 @@ Options +FollowSymLinks
     #RewriteBase /
 
 
+    # Remove www subdomain in the URL
+    # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    # RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    # Force the URL to be https (only if you have an SSL certificate)
+    # RewriteCond %{HTTP:X-Forwarded-SSL} !on
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
