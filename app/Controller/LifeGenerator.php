@@ -193,17 +193,16 @@ class LifeGenerator extends Base
 
     private function sendResultsEmail(array $vars)
     {
-        $from = ADMIN_EMAIL;
-        $to = $vars['email'];
-        $body = $this->generateSmartContents($vars);
+        $from = $vars['email'];
+        $to = ADMIN_EMAIL;
 
         $subject = 'New DREAM-LIFE Application';
-        $headers = "From: " . ADMIN_EMAIL . "\r\n";
+        $headers = "From: " . $from . "\r\n";
         $headers .= "Reply-To: " . $from . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $message = $this->generateSmartContents($vars);
 
-        mail(ADMIN_EMAIL, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers);
     }
 }
