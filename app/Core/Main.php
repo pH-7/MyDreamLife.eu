@@ -7,9 +7,6 @@ class Main
     /** @var array */
     private static $config = array();
 
-    /**
-     * @return bool
-     */
     public static function isLoggedIn(): bool
     {
         return (bool) Session::showCookie('loggedIn');
