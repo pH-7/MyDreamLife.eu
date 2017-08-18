@@ -24,7 +24,7 @@ class User
      */
     public static function getName()
     {
-        if (static::loggedIn()) {
+        if (Main::isLoggedIn()) {
             return static::$userData->name;
         }
     }
@@ -34,7 +34,7 @@ class User
      */
     public static function getPicture()
     {
-        if (static::loggedIn()) {
+        if (Main::isLoggedIn()) {
             return static::$userData->userPicture;
         }
     }
@@ -44,7 +44,7 @@ class User
      */
     public static function getId()
     {
-        if (static::loggedIn()) {
+        if (Main::isLoggedIn()) {
             return static::$userData->userId;
         }
     }
