@@ -51,3 +51,7 @@ abbr {
     border-bottom: 1px dotted #666;
     text-transform:none;
 }
+
+.hidden, .nofield {
+    display: none;
+}

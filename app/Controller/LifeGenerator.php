@@ -150,7 +150,7 @@ class LifeGenerator extends Base
         View::create('confirmation', 'Well Done!');
 
         // Avoid duplication applications if form is resubmitted
-        if (Session::get('residence')) {
+        if (Session::get('residence') && !$this->isSpamBot()) {
             $email = Input::post('email');
             if ($email) {
                 Session::set('email', $email);
@@ -212,6 +212,11 @@ class LifeGenerator extends Base
         $message = $this->generateSmartContents($vars);
 
         mail($to, $subject, $message, $headers);
+    }
+
+    private function isSpamBot(): bool
+    {
+        return Input::post('name');
     }
 
     private function removeSessions()
