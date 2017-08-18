@@ -8,11 +8,11 @@ class Main
     private static $config = array();
 
     /**
-     * @return string|bool
+     * @return bool
      */
-    public static function isLoggedIn()
+    public static function isLoggedIn(): bool
     {
-        return Session::showCookie('loggedIn');
+        return (bool) Session::showCookie('loggedIn');
     }
 
     /**
