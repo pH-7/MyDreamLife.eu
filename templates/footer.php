@@ -3,7 +3,7 @@
 
     <p>
         The <strong>New Life Itinerary</strong> that you will receive is <strong>made by an expat specialist</strong> (<strong>a human</strong> helped by artificial intelligence tools).<br />
-      The Itinerary contains the training to reach your goals (if needed), job positions, best destination(s) for you, best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
+      The Itinerary contains trainings links to reach your goals (if needed), job positions, best destination(s), best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
     </p>
   <?php endif ?>
 </div>
