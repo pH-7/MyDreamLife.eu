@@ -19,8 +19,6 @@ class LifeGenerator extends Base
     public function __construct()
     {
         parent::__construct();
-
-        //$this->loadModel('kik');
     }
 
     public function residence()
