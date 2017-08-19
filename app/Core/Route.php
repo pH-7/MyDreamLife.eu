@@ -26,6 +26,11 @@ class Route
         self::run($uri, $classMethod);
     }
 
+    public static function location(string $fromUri, string $toUrl)
+    {
+        self::run($fromUri, $toUrl);
+    }
+
     public static function isHomepage(): bool
     {
         return empty($_GET['uri']);
@@ -43,24 +48,33 @@ class Route
         $url = !empty($_GET['uri']) ? '/' . $_GET['uri'] : '/';
 
         if (preg_match("#^$uri$#", $url, $params)) {
-            if ($_SERVER['REQUEST_METHOD'] !== self::$httpMethod) {
-                //throw new InvalidArgumentException(sprintf('HTTP Method Must be %s', self::$httpMethod));
-                (new BaseController)->notFound();
-            }
-
-            $split = explode('@', $function);
-            $className = 'Controller\\' . $split[0];
-            $method = $split[1];
-
-            $class = new $className;
-            if (method_exists($class, $method)) {
-                foreach ($params as $k => $v) {
-                    $params[$k] = str_replace('/', '', $v);
+            if (!self::isController($function)) {
+                redirect($function);
+            } else {
+                if ($_SERVER['REQUEST_METHOD'] !== self::$httpMethod) {
+                    //throw new InvalidArgumentException(sprintf('HTTP Method Must be %s', self::$httpMethod));
+                    (new BaseController)->notFound();
                 }
-                return call_user_func_array(array($class, $method), $params);
+
+                $split = explode('@', $function);
+                $className = 'Controller\\' . $split[0];
+                $method = $split[1];
+
+                $class = new $className;
+                if (method_exists($class, $method)) {
+                    foreach ($params as $k => $v) {
+                        $params[$k] = str_replace('/', '', $v);
+                    }
+                    return call_user_func_array(array($class, $method), $params);
+                }
             }
            //throw new RuntimeException('Method "' . $method . '" was not found in "' . $class . '" class.');
            (new BaseController)->notFound();
         }
+    }
+
+    private static function isController(string $method): bool
+    {
+         return strpos($method, '@');
     }
 }
