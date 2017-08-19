@@ -5,16 +5,16 @@
 
 CREATE TABLE itinerary (
   id int(11) unsigned NOT NULL AUTO_INCREMENT,
-  email varchar(175) NOT NULL,
-  residence varchar(175) NOT NULL,
-  nationality varchar(175) NOT NULL,
-  destination varchar(175) NOT NULL,
-  gender varchar(175) NOT NULL,
-  age varchar(175) NOT NULL,
-  lifestyle varchar(175) NOT NULL,
-  background varchar(175) NOT NULL,
-  job varchar(175) NOT NULL,
-  saving varchar(175) NOT NULL,
-  availability varchar(175) NOT NULL,
+  email varchar(120) NOT NULL,
+  residence varchar(20) NOT NULL,
+  nationality varchar(20) NOT NULL,
+  destination varchar(20) NOT NULL,
+  gender varchar(20) NOT NULL,
+  age varchar(20) NOT NULL,
+  lifestyle varchar(20) NOT NULL,
+  background varchar(20) NOT NULL,
+  job varchar(20) NOT NULL,
+  saving varchar(20) NOT NULL,
+  availability varchar(20) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
