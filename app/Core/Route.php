@@ -11,6 +11,8 @@ use Controller\Base as BaseController;
 
 class Route
 {
+    const CONTROLLER_NAMESPACE = 'Controller\\';
+
     const GET_METHOD = 'GET';
     const POST_METHOD = 'POST';
     const PUT_METHOD = 'PUT';
@@ -62,7 +64,7 @@ class Route
                 }
 
                 $split = explode('@', $value);
-                $className = 'Controller\\' . $split[0];
+                $className = self::CONTROLLER_NAMESPACE . $split[0];
                 $method = $split[1];
 
                 $class = new $className;
