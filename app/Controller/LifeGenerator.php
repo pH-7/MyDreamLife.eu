@@ -13,6 +13,8 @@ use Core\Session;
 
 class LifeGenerator extends Base
 {
+    const MAX_FIELD_VALUE_LENGTH = 20;
+
     public function __construct()
     {
         parent::__construct();
@@ -30,7 +32,7 @@ class LifeGenerator extends Base
         View::create('my-nationality', 'My Nationality');
 
         $residence = Input::post('residence');
-        if ($residence) {
+        if ($residence && $this->isCorrectLength($residence)) {
             Session::set('residence', $residence);
         } else {
             redirect('my-residence');
@@ -42,7 +44,7 @@ class LifeGenerator extends Base
         View::create('my-destination', 'The Destination I Wish to Go');
 
         $nationality = Input::post('nationality');
-        if ($nationality) {
+        if ($nationality && $this->isCorrectLength($nationality)) {
             Session::set('nationality', $nationality);
         } else {
             redirect('my-nationality');
@@ -54,7 +56,7 @@ class LifeGenerator extends Base
         View::create('my-gender', 'My Sex');
 
         $destination = Input::post('destination');
-        if ($destination) {
+        if ($destination && $this->isCorrectLength($destination)) {
             Session::set('destination', $destination);
         } else {
             redirect('my-destination');
@@ -66,7 +68,7 @@ class LifeGenerator extends Base
         View::create('my-age', 'My Age');
 
         $gender = Input::post('gender');
-        if ($gender) {
+        if ($gender && $this->isCorrectLength($gender)) {
             Session::set('gender', $gender);
         } else {
             redirect('my-gender');
@@ -78,7 +80,7 @@ class LifeGenerator extends Base
         View::create('my-lifestyle', 'My Lifestyle');
 
         $age = Input::post('age');
-        if ($age) {
+        if ($age && $this->isCorrectLength($age)) {
             Session::set('age', $age);
         } else {
             redirect('my-age');
@@ -90,7 +92,7 @@ class LifeGenerator extends Base
         View::create('my-background', 'My Background..?');
 
         $lifestyle = Input::post('lifestyle');
-        if ($lifestyle) {
+        if ($lifestyle && $this->isCorrectLength($lifestyle)) {
             Session::set('lifestyle', $lifestyle);
         } else {
             redirect('my-lifestyle');
@@ -102,7 +104,7 @@ class LifeGenerator extends Base
         View::create('job-type', 'Kind of Job I Want to Do');
 
         $background = Input::post('background');
-        if ($background) {
+        if ($background && $this->isCorrectLength($background)) {
             Session::set('background', $background);
         } else {
             redirect('my-background');
@@ -114,7 +116,7 @@ class LifeGenerator extends Base
         View::create('my-saving', 'My Money..$$$ How much do I have..?');
 
         $job = Input::post('job-type');
-        if ($job) {
+        if ($job && $this->isCorrectLength($job)) {
             Session::set('job-type', $job);
         } else {
             redirect('job-type');
@@ -126,7 +128,7 @@ class LifeGenerator extends Base
         View::create('availability', 'When I Am Available..?');
 
         $saving = Input::post('saving');
-        if ($saving) {
+        if ($saving && $this->isCorrectLength($saving)) {
             Session::set('saving', $saving);
         } else {
             redirect('my-saving');
@@ -138,7 +140,7 @@ class LifeGenerator extends Base
         View::create('get-results', 'Get My New Life Itinerary');
 
         $availability = Input::post('availability');
-        if ($availability) {
+        if ($availability && $this->isCorrectLength($availability)) {
             Session::set('availability', $availability);
         } else {
             redirect('availability');
@@ -212,6 +214,16 @@ class LifeGenerator extends Base
         $message = $this->generateSmartContents($vars);
 
         mail($to, $subject, $message, $headers);
+    }
+
+    /**
+     * @param mixed $fieldValue
+     *
+     * @return bool
+     */
+    private function isCorrectLength($fieldValue): bool
+    {
+        return strlen($fieldValue) <= self::MAX_FIELD_VALUE_LENGTH;
     }
 
     private function isSpamBot(): bool
