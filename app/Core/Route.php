@@ -38,25 +38,25 @@ class Route
 
     /**
      * @param string $uri
-     * @param string $function
+     * @param string $value
      *
      * @return mixed
      */
-    private static function run(string $uri, string $function)
+    private static function run(string $uri, string $value)
     {
         $uri = '/' . trim($uri, '/');
         $url = !empty($_GET['uri']) ? '/' . $_GET['uri'] : '/';
 
         if (preg_match("#^$uri$#", $url, $params)) {
-            if (!self::isController($function)) {
-                redirect($function);
+            if (!self::isController($value)) {
+                redirect($value);
             } else {
                 if ($_SERVER['REQUEST_METHOD'] !== self::$httpMethod) {
                     //throw new InvalidArgumentException(sprintf('HTTP Method Must be %s', self::$httpMethod));
                     (new BaseController)->notFound();
                 }
 
-                $split = explode('@', $function);
+                $split = explode('@', $value);
                 $className = 'Controller\\' . $split[0];
                 $method = $split[1];
 
