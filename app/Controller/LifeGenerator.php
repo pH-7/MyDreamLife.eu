@@ -13,6 +13,7 @@ use Core\Session;
 
 class LifeGenerator extends Base
 {
+    const MAX_EMAIL_LENGTH = 120;
     const MAX_FIELD_VALUE_LENGTH = 20;
 
     public function __construct()
@@ -151,9 +152,10 @@ class LifeGenerator extends Base
     {
         View::create('confirmation', 'Well Done!');
 
+        $email = Input::post('email');
+
         // Avoid duplication applications if form is resubmitted
-        if (Session::get('residence') && !$this->isSpamBot()) {
-            $email = Input::post('email');
+        if (Session::get('residence') && $this->isValidEmail($email) && !$this->isSpamBot()) {
             if ($email) {
                 Session::set('email', $email);
             } else {
@@ -214,6 +216,13 @@ class LifeGenerator extends Base
         $message = $this->generateSmartContents($vars);
 
         mail($to, $subject, $message, $headers);
+    }
+
+    private function isValidEmail(string $email): bool
+    {
+        return
+            filter_var($email, FILTER_VALIDATE_EMAIL) !== false &&
+            strlen($email) <= self::MAX_EMAIL_LENGTH;
     }
 
     /**
