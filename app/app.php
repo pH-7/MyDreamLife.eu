@@ -5,8 +5,8 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-use Core\Main;
 use Core\Database;
+use Core\Main;
 
 define('APP_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 

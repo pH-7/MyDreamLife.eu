@@ -7,9 +7,9 @@
 
 namespace Controller;
 
-use Core\View;
 use Core\Input;
 use Core\Session;
+use Core\View;
 
 class LifeGenerator extends Base
 {
