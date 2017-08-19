@@ -113,9 +113,9 @@ class LifeGenerator extends Base
     {
         View::create('my-saving', 'My Money..$$$ How much do I have..?');
 
-        $job = Input::post('job');
+        $job = Input::post('job-type');
         if ($job) {
-            Session::set('job', $job);
+            Session::set('job-type', $job);
         } else {
             redirect('job-type');
         }
@@ -169,7 +169,7 @@ class LifeGenerator extends Base
                 'age' => Session::get('age'),
                 'lifestyle' => Session::get('lifestyle'),
                 'background' => Session::get('background'),
-                'job' => Session::get('job'),
+                'job' => Session::get('job-type'),
                 'saving' => Session::get('saving'),
                 'availability' => Session::get('availability')
             ];
