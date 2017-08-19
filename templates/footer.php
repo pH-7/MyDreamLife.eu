@@ -1,9 +1,9 @@
   <?php if (Core\Route::isHomepage()): ?>
-      <p>MyNewDream is the <strong>simplest web app</strong> that gives a friendly, understandable and accurate itinerary that guides you in <strong>starting your new life</strong>.</p>
+      <p>MyNewDream is the <strong>simplest web app</strong> that gives a friendly, understandable and <strong>accurate itinerary</strong> that guides you in <strong>starting your new life</strong> (without procrastinating).</p>
 
     <p>
         The <strong>New Life Itinerary</strong> that you will receive is <strong>made by an expat specialist</strong> (<strong>a human</strong> helped by artificial intelligence tools).<br />
-      The Itinerary contains trainings links to reach your goals (if needed), job positions, best destination(s), best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
+      The Itinerary contains training links to reach your goals (if needed), job positions, best destination(s), best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
     </p>
   <?php endif ?>
 </div>
