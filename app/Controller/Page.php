@@ -19,19 +19,24 @@ class Page extends Base
             'vimeoId' => 230046783,
             'description' => 'Work in New Zealand with the WHV.'
         ],
+        2 => [
+            'title' => 'Working In South Korea',
+            'vimeoId' => 230046783,
+            'description' => 'Go Living and Working in South Korea can definitely be the best experience of your life! Do NOT Procrastinate!'
+        ],
     ];
 
-    public function about()
+    public function about(): void
     {
         View::create('page/about', 'Who is behind it?');
     }
 
-    public function posts()
+    public function posts(): void
     {
         View::create('page/posts', 'Posts', ['posts' =>$this->posts]);
     }
 
-    public function post()
+    public function post(): void
     {
         $postId = Input::get('id');
         if ($postId && ctype_digit($postId) && isset($this->posts[$postId])) {
