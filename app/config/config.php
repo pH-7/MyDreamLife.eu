@@ -4,8 +4,8 @@
 $config = [
     'db' => [
         'dbHost' => 'localhost',
-        'dbUser' => 'ph7cms',
-        'dbPass' => 'ph7cms',
-        'dbName' => 'kikornot'
+        'dbUser' => 'YOUR-DB-USER',
+        'dbPass' => 'YOUR-DB-PWD',
+        'dbName' => 'YOUR-DB-NAME'
     ]
 ];
