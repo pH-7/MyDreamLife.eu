@@ -20,9 +20,9 @@ class Page extends Base
             'description' => 'Work in New Zealand with the WHV.'
         ],
         2 => [
-            'title' => 'Working In South Korea',
-            'vimeoId' => 230046783,
-            'description' => 'Go Living and Working in South Korea can definitely be the best experience of your life! Do NOT Procrastinate!'
+            'title' => 'Working In Japan',
+            'vimeoId' => 160301271,
+            'description' => 'Go Living and Working in Japan, in Tokyo, Kyoto, Osaka can definitely be the best experience of your life! Do NOT Procrastinate!'
         ],
     ];
 
