@@ -8,11 +8,11 @@ class Session
      * Sets a session.
      *
      * @param string $key The key
-     * @param string $value The value
+     * @param string|int $value The value
      *
      * @return void
      */
-    public static function set($key, $value): void
+    public static function set(string $key, $value): void
     {
         $_SESSION[$key] = $value;
     }
@@ -24,7 +24,7 @@ class Session
      *
      * @return string|bool The value
      */
-    public static function get($key)
+    public static function get(string $key)
     {
         return isset($_SESSION[$key]) ? $_SESSION[$key] : false;
     }
@@ -41,11 +41,11 @@ class Session
 
     /**
      * @param string $name The cookie name.
-     * @param string $value The value of the cookie.
+     * @param string|int $value The value of the cookie.
      *
      * @return void
      */
-    public static function setCookie($name, $value): void
+    public static function setCookie(string $name, $value): void
     {
         setcookie($name, $value, time() + 60 * 60 * 24 * 365, '/', false);
     }
@@ -55,7 +55,7 @@ class Session
      *
      * @return void
      */
-    public static function removeCookie($name): void
+    public static function removeCookie(string $name): void
     {
         setcookie($name, '', time() - 60 * 60 * 24 * 365, '/', false);
     }
@@ -65,7 +65,7 @@ class Session
      *
      * @return string|bool
      */
-    public static function showCookie($name)
+    public static function showCookie(string $name)
     {
         return isset($_COOKIE[$name]) ? $_COOKIE[$name] : false;
     }

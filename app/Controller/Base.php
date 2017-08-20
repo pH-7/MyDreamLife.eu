@@ -18,7 +18,7 @@ class Base
         }
     }
 
-    public function notFound()
+    public function notFound(): void
     {
         header('HTTP/1.1 404 Not Found');
 

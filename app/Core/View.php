@@ -11,7 +11,7 @@ class View
      * @param string $title
      * @param array $data
      */
-    public static function create($view, $title = '', array $data = array()): void
+    public static function create(string $view, string $title = '', array $data = array()): void
     {
         extract($data);
 
@@ -33,7 +33,7 @@ class View
      * @param int $paritals
      * @param array $data
      */
-    public static function admin($view, $title = '', $paritals = 1, array $data = array()): void
+    public static function admin(string $view, $title = '', int $paritals = 1, array $data = array()): void
     {
         extract($data);
 
