@@ -27,7 +27,7 @@
   </nav>
 
   <?php if (Core\Route::isHomepage()): ?>
-      <div class="section no-pad-bot" id="index-banner">
+      <header class="section no-pad-bot" id="index-banner">
         <div class="container">
           <h1 class="header center orange-text">Get Your Dream Life!</h1>
           <div class="row center">
@@ -35,7 +35,7 @@
               <h6>The FIRST European Platform that gives a <span class="underline">real full itinerary</span> for starting a new exciting life from scratch</h6>
           </div>
         </div>
-      </div>
+      </header>
   <?php endif ?>
 
   <div class="container">
