@@ -12,6 +12,7 @@ use Core\View;
 
 class Page extends Base
 {
+    /** @var array */
     private $posts = [
         1 => [
             'title' => 'Easiest Way To Work Abroad! Working Holiday Visa',
