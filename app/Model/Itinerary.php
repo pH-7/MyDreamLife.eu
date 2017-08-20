@@ -11,7 +11,7 @@ use Core\Database;
 
 class Itinerary
 {
-    public static function insert(array $binds)
+    public static function insert(array $binds): void
     {
         Database::query("INSERT INTO itinerary (email, residence, nationality, destination, gender, age, lifestyle, background, job, saving, availability) VALUES(:email, :residence, :nationality, :destination, :gender, :age, :lifestyle, :background, :job, :saving, :availability)", $binds);
     }

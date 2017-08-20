@@ -1,6 +1,12 @@
 <?php
+/**
+ * @author         Pierre-Henry Soria <hi@ph7.me>
+ * @copyright      (c) 2017, Pierre-Henry Soria. All Rights Reserved.
+ * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
+ */
 
-function site_url(string $var = '') {
+function site_url(string $var = ''): string
+{
     if (!empty($var)) {
         return SITE_URL . $var;
     }
@@ -8,7 +14,8 @@ function site_url(string $var = '') {
     return SITE_URL;
 }
 
-function asset_url(string $var = '') {
+function asset_url(string $var = ''): string
+{
     if (!empty($var)) {
         return SITE_URL . $var;
     }
@@ -16,7 +23,8 @@ function asset_url(string $var = '') {
     return SITE_URL . 'assets/';
 }
 
-function redirect(string $url) {
+function redirect(string $url): void
+{
     if (strpos($url, 'http') === false) {
         $url = SITE_URL . $url;
     }
@@ -25,6 +33,7 @@ function redirect(string $url) {
     exit;
 }
 
-function escape(string $value) {
+function escape(string $value): string
+{
     return htmlspecialchars($value, ENT_QUOTES);
 }

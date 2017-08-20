@@ -13,8 +13,7 @@ class Hash
      *
      * @return string The hashed string
      */
-
-    public static function generate($string)
+    public static function generate($string): string
     {
         $rounds = sprintf('%02d', 10);
         $salt = substr(str_shuffle(str_repeat(self::REPEAT_HASH, 5)), 0, 22);
@@ -30,7 +29,7 @@ class Hash
      *
      * @return bool Does it match?
      */
-    public static function compare($string, $hash)
+    public static function compare($string, $hash): bool
     {
         return crypt($string, $hash) === $hash;
     }

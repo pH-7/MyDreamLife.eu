@@ -12,7 +12,7 @@ class Session
      *
      * @return void
      */
-    public static function set($key, $value)
+    public static function set($key, $value): void
     {
         $_SESSION[$key] = $value;
     }
@@ -34,7 +34,7 @@ class Session
      *
      * @return void
      */
-    public static function destroy()
+    public static function destroy(): void
     {
         session_destroy();
     }
@@ -45,7 +45,7 @@ class Session
      *
      * @return void
      */
-    public static function setCookie($name, $value)
+    public static function setCookie($name, $value): void
     {
         setcookie($name, $value, time() + 60 * 60 * 24 * 365, '/', false);
     }
@@ -55,7 +55,7 @@ class Session
      *
      * @return void
      */
-    public static function removeCookie($name)
+    public static function removeCookie($name): void
     {
         setcookie($name, '', time() - 60 * 60 * 24 * 365, '/', false);
     }

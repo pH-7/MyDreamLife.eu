@@ -7,7 +7,7 @@ class User
     /** @var stdClass The user fields */
     private static $userData;
 
-    public static function store()
+    public static function store(): void
     {
         $bind = [
             'userid' => Session::showCookie('userId')
@@ -32,7 +32,7 @@ class User
     /**
      * @return string
      */
-    public static function getPicture()
+    public static function getPicture(): string
     {
         if (Main::isLoggedIn()) {
             return static::$userData->userPicture;
@@ -42,7 +42,7 @@ class User
     /**
      * @return int
      */
-    public static function getId()
+    public static function getId(): int
     {
         if (Main::isLoggedIn()) {
             return static::$userData->userId;

@@ -13,7 +13,7 @@ After the payment made, I sadly noticed my mistake but it was already too late..
 
 ## Requirements
 
-* **Server** PHP 7.0 or newer
+* **Server** PHP 7.1 or newer
 
 * **Database** MySQL/MariaDB 5.0.3 or newer
 

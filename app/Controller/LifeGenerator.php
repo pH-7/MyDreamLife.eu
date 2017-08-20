@@ -21,12 +21,12 @@ class LifeGenerator extends Base
         parent::__construct();
     }
 
-    public function residence()
+    public function residence(): void
     {
         View::create('my-residence', 'Get the D.R.E.A.M. Life I Am Looking For!');
     }
 
-    public function nationality()
+    public function nationality(): void
     {
         View::create('my-nationality', 'My Nationality');
 
@@ -38,7 +38,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function destination()
+    public function destination(): void
     {
         View::create('my-destination', 'The Destination I Wish to Go');
 
@@ -50,7 +50,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function gender()
+    public function gender(): void
     {
         View::create('my-gender', 'My Sex');
 
@@ -62,7 +62,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function age()
+    public function age(): void
     {
         View::create('my-age', 'My Age');
 
@@ -74,7 +74,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function lifestyle()
+    public function lifestyle(): void
     {
         View::create('my-lifestyle', 'My Lifestyle');
 
@@ -86,7 +86,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function background()
+    public function background(): void
     {
         View::create('my-background', 'My Background..?');
 
@@ -98,7 +98,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function job()
+    public function job(): void
     {
         View::create('job-type', 'Kind of Job I Want to Do');
 
@@ -110,7 +110,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function saving()
+    public function saving(): void
     {
         View::create('my-saving', 'My Money..$$$ How much do I have..?');
 
@@ -122,7 +122,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function availability()
+    public function availability(): void
     {
         View::create('availability', 'When I Am Available..?');
 
@@ -134,7 +134,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function results()
+    public function results(): void
     {
         View::create('get-results', 'Get My New Life Itinerary');
 
@@ -146,7 +146,7 @@ class LifeGenerator extends Base
         }
     }
 
-    public function confirmation()
+    public function confirmation(): void
     {
         View::create('confirmation', 'Well Done!');
 
@@ -201,7 +201,7 @@ class LifeGenerator extends Base
         return $message;
     }
 
-    private function sendResultsEmail(array $vars)
+    private function sendResultsEmail(array $vars): bool
     {
         $from = $vars['email'];
         $to = ADMIN_EMAIL;
@@ -213,7 +213,7 @@ class LifeGenerator extends Base
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $message = $this->generateSmartContents($vars);
 
-        mail($to, $subject, $message, $headers);
+        return mail($to, $subject, $message, $headers);
     }
 
     private function isValidEmail(string $email): bool
@@ -238,7 +238,7 @@ class LifeGenerator extends Base
         return (bool) Input::post('name');
     }
 
-    private function removeSessions()
+    private function removeSessions(): void
     {
         $_SESSION = [];
         session_unset();

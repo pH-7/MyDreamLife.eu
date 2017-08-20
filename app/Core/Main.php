@@ -17,7 +17,7 @@ class Main
      *
      * @return void
      */
-    public static function store()
+    public static function store(): void
     {
         if (empty(static::$config)) {
             include_once APP_PATH . 'config/config.php';

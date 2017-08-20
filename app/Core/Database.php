@@ -38,7 +38,7 @@ class Database
      *
      * @return void
      */
-    public static function query($sql, array $binds = array(), $execute = true)
+    public static function query($sql, array $binds = array(), bool $execute = true): void
     {
         static::$_stmt = static::$_pdo->prepare($sql);
 
@@ -56,7 +56,7 @@ class Database
      *
      * @return int The number of affected rows
      */
-    public static function rowCount()
+    public static function rowCount(): int
     {
         return static::$_stmt->rowCount();
     }
@@ -74,7 +74,7 @@ class Database
     /**
      * @return string
      */
-    public static function quote($string)
+    public static function quote(string $string): string
     {
         return static::$_pdo->quote($string);
     }

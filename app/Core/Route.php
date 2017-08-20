@@ -20,20 +20,20 @@ class Route
 
     private static $httpMethod = self::GET_METHOD;
 
-    public static function get(string $uri, string $classMethod = '')
+    public static function get(string $uri, string $classMethod = ''): void
     {
         self::$httpMethod = self::GET_METHOD;
 
         self::run($uri, $classMethod);
     }
 
-    public static function post(string $uri, string $classMethod = '')
+    public static function post(string $uri, string $classMethod = ''): void
     {
         self::$httpMethod = self::POST_METHOD;
         self::run($uri, $classMethod);
     }
 
-    public static function location(string $fromUri, string $toUrl)
+    public static function location(string $fromUri, string $toUrl): void
     {
         self::run($fromUri, $toUrl);
     }
