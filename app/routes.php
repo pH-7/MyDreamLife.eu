@@ -19,4 +19,9 @@ Route::post('/my-saving', 'LifeGenerator@saving');
 Route::post('/availability', 'LifeGenerator@availability');
 Route::post('/get-results', 'LifeGenerator@results');
 Route::post('/confirmation', 'LifeGenerator@confirmation');
+
+Route::get('/about', 'Page@about');
+Route::get('/posts', 'Page@posts');
+Route::get('/post', 'Page@post');
+
 Route::location('/apps', 'https://docs.google.com/document/d/1HU1dUSix37K1f6COKQkMcDLeE72RZK8Y1yP8EFO8L30/');
