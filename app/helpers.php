@@ -1,6 +1,6 @@
 <?php
 
-function site_url($var = '') {
+function site_url(string $var = '') {
     if (!empty($var)) {
         return SITE_URL . $var;
     }
@@ -8,7 +8,7 @@ function site_url($var = '') {
     return SITE_URL;
 }
 
-function asset_url($var = '') {
+function asset_url(string $var = '') {
     if (!empty($var)) {
         return SITE_URL . $var;
     }
