@@ -4,6 +4,6 @@
 define('SITE_URL', 'http://localhost:8888/mydreamlife/');
 define('SITE_NAME', 'MyDreamLife.eu');
 define('ADMIN_EMAIL', 'hi@ph7.me');
-define('DEBUG_MODE', false);
-define('RECAPTCHA_SECRET_KEY', '6LeRGxcTAAAAANuetpENkUiqHG2e7mjgschpySkN'); // https://www.google.com/recaptcha/admin
+define('DEBUG_MODE', true);
+define('RECAPTCHA_SECRET_KEY', 'YOUR-RECAPTCHA-KEY'); // https://www.google.com/recaptcha/admin
 define('GOOGLE_ANALYTICS_ID', 'UA-<YOUR-GOOGLE-ANALYTICS-ID>'); // https://analytics.google.com
