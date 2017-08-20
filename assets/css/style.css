@@ -23,7 +23,7 @@
 .age-range, .saving, .availability {
     font-size: 2.5rem;
 }
-.container .center form {
+.container .center form, .bottom-margin {
     margin-bottom: 50px;
 }
 
