@@ -6,7 +6,7 @@
       The Itinerary contains training links to reach your goals (if needed), job positions, best destination(s), best moments for leaving, flight information, visa process (if needed) and tips for your trip and your new life (depending of the situation and your destination).
     </p>
   <?php endif ?>
-</div>
+  </section>
   
   <footer class="page-footer light-orange">
     <div class="container">

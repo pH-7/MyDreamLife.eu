@@ -38,4 +38,4 @@
       </header>
   <?php endif ?>
 
-  <div class="container">
+  <section class="container">
