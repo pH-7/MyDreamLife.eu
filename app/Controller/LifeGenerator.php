@@ -154,8 +154,10 @@ class LifeGenerator extends Base
 
         $email = Input::post('email');
 
-        // Avoid duplication applications if form is resubmitted
-        if (Session::get('residence') && $this->isValidEmail($email) && !$this->isSpamBot()) {
+        if (
+            $this->isFirstSubmission() && !$this->isSpamBot() &&
+            $this->isValidEmail($email) && !$this->isUnwantedEmail($email)
+        ) {
             if ($email) {
                 Session::set('email', $email);
             } else {
@@ -235,9 +237,26 @@ class LifeGenerator extends Base
         return strlen($fieldValue) <= self::MAX_FIELD_VALUE_LENGTH;
     }
 
+    /**
+     * Avoid duplication applications if form has already been resubmitted.
+     *
+     * @return bool
+     */
+    private function isFirstSubmission(): bool
+    {
+        return (bool)Session::get('residence');
+    }
+
     private function isSpamBot(): bool
     {
         return (bool)Input::post('name');
+    }
+
+    private function isUnwantedEmail(string $emailAddress): bool
+    {
+        $unwantedHosts = file(APP_PATH . 'config/unwanted/emails.txt');
+
+        return in_array(strrchr($emailAddress, '@'), array_map('trim', $unwantedHosts));
     }
 
     private function removeSessions(): void
