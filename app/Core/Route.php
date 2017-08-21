@@ -77,13 +77,13 @@ class Route
                     return call_user_func_array(array($class, $method), $params);
                 }
             }
-           //throw new RuntimeException('Method "' . $method . '" was not found in "' . $class . '" class.');
-           (new BaseController)->notFound();
+            //throw new RuntimeException('Method "' . $method . '" was not found in "' . $class . '" class.');
+            (new BaseController)->notFound();
         }
     }
 
     private static function isController(string $method): bool
     {
-         return strpos($method, '@') !== false;
+        return strpos($method, '@') !== false;
     }
 }

@@ -35,7 +35,7 @@ class Page extends Base
 
     public function posts(): void
     {
-        View::create('page/posts', 'Posts', ['posts' =>$this->posts]);
+        View::create('page/posts', 'Posts', ['posts' => $this->posts]);
     }
 
     public function post(): void

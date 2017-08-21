@@ -6,7 +6,7 @@
             <p><a href="<?php echo site_url('post?id=' . $i) ?>">See The Post &rarr;</a></p>
 
             <?php if ($i < $totalPosts): ?>
-                <hr />
+                <hr>
             <?php endif ?>
         </article>
     <?php endfor ?>

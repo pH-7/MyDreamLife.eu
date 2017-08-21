@@ -11,7 +11,7 @@ class Main
 
     public static function isLoggedIn(): bool
     {
-        return (bool) Session::showCookie('loggedIn');
+        return (bool)Session::showCookie('loggedIn');
     }
 
     /**

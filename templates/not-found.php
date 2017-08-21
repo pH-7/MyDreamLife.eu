@@ -8,7 +8,8 @@
                     <p><strong><em>Suggestions:</em></strong></p>
                     <ul>
                         <li><a href="<?php echo site_url(); ?>">Main Page</a></li>
-                        <li><a href="javascript:void(0);" onclick="history.go(-1);">Go back to the previous page</a></li>
+                        <li><a href="javascript:void(0);" onclick="history.go(-1);">Go back to the previous page</a>
+                        </li>
                     </ul>
                 </div>
             </div>

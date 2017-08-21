@@ -9,6 +9,7 @@
     height: 150px;
     border-radius: 5px;
 }
+
 .flag.icon, .destination, .age-range, .lifestyle-topic, .education, .saving, .job-type, .availability {
     display: inline-block;
 }
@@ -17,12 +18,15 @@
     font-weight: bold;
     margin: 10px;
 }
+
 .destination, .lifestyle-topic, .education, .job-type {
     font-size: 1rem;
 }
+
 .age-range, .saving, .availability {
     font-size: 2.5rem;
 }
+
 .container .center form, .bottom-margin {
     margin-bottom: 50px;
 }
@@ -49,7 +53,7 @@
 
 abbr {
     border-bottom: 1px dotted #666;
-    text-transform:none;
+    text-transform: none;
 }
 
 .hidden, .nofield {

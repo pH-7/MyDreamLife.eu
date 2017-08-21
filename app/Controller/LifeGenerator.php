@@ -237,7 +237,7 @@ class LifeGenerator extends Base
 
     private function isSpamBot(): bool
     {
-        return (bool) Input::post('name');
+        return (bool)Input::post('name');
     }
 
     private function removeSessions(): void
