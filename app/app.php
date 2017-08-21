@@ -22,7 +22,7 @@ if (DEBUG_MODE) {
 }
 
 
-function autoloadClasses($className) {
+function autoloadClasses(string $className) {
     $className = str_replace('\\', '/', $className);
 
     $filename = APP_PATH . $className . '.php';
