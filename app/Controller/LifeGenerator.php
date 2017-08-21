@@ -18,6 +18,7 @@ class LifeGenerator extends Base
     const MAX_EMAIL_LENGTH = 120;
     const MAX_FIELD_VALUE_LENGTH = 20;
     const COOKIE_NAME_APPLICATION_SENT = 'application_submitted';
+    const ITINERARY_EMAIL_TPL_PATH = 'templates/emails/itinerary.txt';
 
     public function __construct()
     {
@@ -193,16 +194,6 @@ class LifeGenerator extends Base
 
     private function generateSmartContents(array $data): string
     {
-        /*$message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-        $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
-        $message .= '</div>';
-        $message .= 'Hey' . $likedUser->user_name . '! ' . $userData->user_name . ' likes your photo and so interested to meet you.<br />';
-        $message .= '<a href="mailto:' . $from . '"><img src="' . $userPhoto . '" alt="' . $userData->user_name . '" title="' . $userData->user_name . ' wants to meet you." /></a>';
-        $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
-        $message .= '&copy; Kik or not</a><br /><br />';
-        $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
-        $message .= '</div>';*/
-
         $message = print_r($data, true);
 
         return $message;
@@ -219,6 +210,32 @@ class LifeGenerator extends Base
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $message = $this->generateSmartContents($vars);
+
+        return mail($to, $subject, $message, $headers);
+    }
+
+    private function sendItineraryResults(array $vars): bool
+    {
+        $from = ADMIN_EMAIL;
+        $to = $vars['email'];
+        $subject = 'Your New Life Itinerary';
+
+        $emailContents = file_get_contents(self::ITINERARY_EMAIL_TPL_PATH);
+
+        $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
+        $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">' . SITE_NAME . '</a>';
+        $message .= '</div>';
+
+        $message .= nl2br($emailContents);
+
+        $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
+        $message .= '<small>You are receiving this email because you made an application on "' . SITE_URL . '" with this email address.</small>';
+        $message .= '</div>';
+
+        $headers = "From: \"{$_SERVER['HTTP_HOST']}\" <{$_SERVER['SERVER_ADMIN']}>\r\n"; // To avoid the email goes to spam
+        $headers .= "Reply-To: " . $from . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         return mail($to, $subject, $message, $headers);
     }
