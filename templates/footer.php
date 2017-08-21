@@ -33,7 +33,7 @@
                   Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
               </div>
               <div class="col l5 s12">
-                  Proud to be <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">100% open source</a>!
+                  Proud to be an <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">open source project</a>!
               </div>
               <div class="col l1 s12">
                   <a class="orange-text text-lighten-3" href="<?php echo site_url('posts') ?>">Posts</a>
