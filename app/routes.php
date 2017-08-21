@@ -8,6 +8,7 @@
 use Core\Route;
 
 Route::get('/', 'LifeGenerator@residence');
+Route::get('/my-residence', 'LifeGenerator@residence');
 Route::post('/my-nationality', 'LifeGenerator@nationality');
 Route::post('/my-destination', 'LifeGenerator@destination');
 Route::post('/my-gender', 'LifeGenerator@gender');
