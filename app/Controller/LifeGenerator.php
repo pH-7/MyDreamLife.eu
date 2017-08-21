@@ -165,7 +165,7 @@ class LifeGenerator extends Base
                 redirect('get-results');
             }
 
-            $this->sendResultsEmail($_SESSION);
+            $this->sendApplicationToAdmin($_SESSION);
 
             $data = [
                 'email' => Session::get('email'),
@@ -208,7 +208,7 @@ class LifeGenerator extends Base
         return $message;
     }
 
-    private function sendResultsEmail(array $vars): bool
+    private function sendApplicationToAdmin(array $vars): bool
     {
         $from = $vars['email'];
         $to = ADMIN_EMAIL;
