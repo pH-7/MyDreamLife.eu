@@ -17,6 +17,7 @@ class LifeGenerator extends Base
 {
     const MAX_EMAIL_LENGTH = 120;
     const MAX_FIELD_VALUE_LENGTH = 20;
+    const COOKIE_NAME_APPLICATION_SENT = 'application_submitted';
 
     public function __construct()
     {
@@ -183,6 +184,8 @@ class LifeGenerator extends Base
             \Model\Itinerary::insert($data);
 
             $this->removeSessions();
+
+            Session::set(self::COOKIE_NAME_APPLICATION_SENT, true);
         } else {
             redirect('/');
         }
@@ -244,7 +247,7 @@ class LifeGenerator extends Base
      */
     private function isFirstSubmission(): bool
     {
-        return (bool)Session::get('residence');
+        return (bool)Session::get('residence') && !Session::get(self::COOKIE_NAME_APPLICATION_SENT);
     }
 
     private function isSpamBot(): bool
