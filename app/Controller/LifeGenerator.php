@@ -252,6 +252,11 @@ class LifeGenerator extends Base
         return (bool)Input::post('name');
     }
 
+    /**
+     * @param string $emailAddress
+     *
+     * @return bool TRUE if the email is unwanted, FALSE otherwise.
+     */
     private function isUnwantedEmail(string $emailAddress): bool
     {
         $unwantedHosts = file(APP_PATH . 'config/unwanted/emails.txt');
