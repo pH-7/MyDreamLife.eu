@@ -84,6 +84,6 @@ class Route
 
     private static function isController(string $method): bool
     {
-         return strpos($method, '@');
+         return strpos($method, '@') !== false;
     }
 }
