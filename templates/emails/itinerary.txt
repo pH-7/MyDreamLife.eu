@@ -2,7 +2,8 @@ Hi there!
 
 First off, congratulation for the big step you just made! Over 80% of the population want to change their life or getting a better life but their will never do it! Life is too short and goes way faster than you think.
 
-I see you are from Switzerland and you want to move to Western Europe (probable to an EU country ...). Your saving is not that much... so for that reason I excluded London and Dublin (although they do have a lot of opportunities for designers), but the rent is from €13,000 for non-sharing (appartement).
+I see you are from [NATIONALITY_COUNTRY], living in [RESIDENCY_COUNTRY] and you want to move to [DESTINATION_AREA].
+Your saving is not that much... so for that reason I excluded London and Dublin (although they do have a lot of opportunities for designers), but the rent is from €13,000 for non-sharing (appartement).
 
 Since you are a Swiss, you might be German native (or having a basic level of Swiss at least).
 
