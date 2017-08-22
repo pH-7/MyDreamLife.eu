@@ -1,3 +1,4 @@
+# List made by Pierre-Henry Soria <hi@ph7.me>
 # Copied from https://github.com/pH7Software/pH7-Social-Dating-CMS/blob/master/_protected/app/configs/bans/email.txt
 
 @mytrashmail.com
