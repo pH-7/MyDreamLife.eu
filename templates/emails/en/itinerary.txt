@@ -5,13 +5,10 @@ First off, congratulation for the big step you just made! Over 80% of the popula
 I see you are from [NATIONALITY_COUNTRY], living in [RESIDENCY_COUNTRY] and you want to move to [DESTINATION_AREA].
 Your saving is not that much... so for that reason I excluded London and Dublin (although they do have a lot of opportunities for designers), but the rent is from €13,000 for non-sharing (appartement).
 
-Since you are a Swiss, you might be German native (or having a basic level of Swiss at least).
+Since you are a [NATIONALITY], you might be [NATIONALITY] native (or having a basic level at least...).
 
 Because you prefer big cities and capitals, the place I found for you is definitely Berlin. Most of the companies there also speak English (if your German is not that good) and they do have a lot of job positions for you.
 
-You might need a work permit (not necessary since you are a Swiss citizen).
-Switzerland. Under the EU-Switzerland agreement on the free movement of persons, Swiss nationals are free to live and work in the EU. Most EU citizens do not need a permit to work in Switzerland. Restrictions only apply to nationals of Croatia – who need a work permit.
-http://ec.europa.eu/social/main.jsp?catId=470
 
 I already found a job for you with Visa Sponrshonship https://smava.softgarden.io/job/1232176?l=en (most of the companies do first a Skype Interview).
 Although you can already move there straight away. Rent are quite cheap too!

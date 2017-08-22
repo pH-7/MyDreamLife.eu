@@ -27,10 +27,33 @@ class Itinerary
         $this->templateContents = $templateContents;
     }
 
-    public function destination()
+    public function generate(): string
     {
-        if ($this->userData['destination']) {
+        $contents = $this->replaceVariables();
 
-        }
+        return $contents;
+    }
+
+    private function replaceVariables(): string
+    {
+        $nationality = new Nationality($this->userData['nationality']);
+        $nationalityCountry = new Country($this->userData['nationality']);
+        $residencyCountry = new Country($this->userData['residence']);
+
+        $templateVariables = [
+            Variables::NATIONALITY,
+            Variables::NATIONALITY_COUNTRY,
+            Variables::RESIDENCY_COUNTRY,
+            Variables::DESTINATION_AREA
+        ];
+
+        $userValues = [
+            $nationality->getValue(),
+            $nationalityCountry->getValue(),
+            $residencyCountry->getValue(),
+            $this->userData['destination']
+        ];
+
+        return str_replace($templateVariables, $userValues, $this->templateContents);
     }
 }
