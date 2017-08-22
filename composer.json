@@ -1,0 +1,25 @@
+{
+  "name": "ph-7/mydreamlife",
+  "description": "MyDreamLife gives a TODO-list and full Itinerary for a NEW LIFE abroad.",
+  "type": "project",
+  "homepage": "http://mynewdream.eu",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Pierre-Henry Soria",
+      "email": "hi@ph7.me",
+      "homepage": "http://ph7.me"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "app/Core"
+    }
+  }
+}
