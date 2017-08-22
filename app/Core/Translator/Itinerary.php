@@ -11,6 +11,16 @@ namespace Core\Translator;
 
 class Itinerary
 {
+    const TRAINING_WORDING = "I highly advice you to take some trainings (have a look to Coursera/Audacity websites and read syllabus/books for courses in your field) in order to become THE BEST and get VISA Sponsorship accepted. If you aren't the best, there are lot of chance you don't get your visa";
+
+    private static $highLevelDestinations = [
+        'japan-korea',
+        'north-america',
+        'oceania'
+    ];
+
+    private $isHighLevelDestination = false;
+
     /** @var array */
     private $userData;
 
@@ -25,6 +35,10 @@ class Itinerary
     {
         $this->userData = $userData;
         $this->templateContents = $templateContents;
+
+        if (in_array($this->userData['destination'], $this->highLevelDestinations)) {
+            $this->isHighLevelDestination = true;
+        }
     }
 
     public function generate(): string
@@ -39,19 +53,22 @@ class Itinerary
         $nationality = new Nationality($this->userData['nationality']);
         $nationalityCountry = new Country($this->userData['nationality']);
         $residencyCountry = new Country($this->userData['residence']);
+        $training = $this->isHighLevelDestination ? self::TRAINING_WORDING : '';
 
         $templateVariables = [
             Variables::NATIONALITY,
             Variables::NATIONALITY_COUNTRY,
             Variables::RESIDENCY_COUNTRY,
-            Variables::DESTINATION_AREA
+            Variables::DESTINATION_AREA,
+            Variables::TRAINING_NEEDED
         ];
 
         $userValues = [
             $nationality->getValue(),
             $nationalityCountry->getValue(),
             $residencyCountry->getValue(),
-            $this->userData['destination']
+            $this->userData['destination'],
+            $training
         ];
 
         return str_replace($templateVariables, $userValues, $this->templateContents);
