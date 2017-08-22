@@ -8,8 +8,8 @@
         endif; ?>
 
         <p><?php echo $description ?></p>
-        <p>See also the <a href="<?php echo site_url('apps') ?>" rel="nofollow noopener" target="_blank"
-                           class="underline">useful apps</a> to get before your trip.
+        <p>
+            See also the <a href="<?php echo site_url('apps') ?>" rel="nofollow noopener" target="_blank" class="underline">useful apps</a> to get before your trip.
         </p>
 
         <div class="post-button">
