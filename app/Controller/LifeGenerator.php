@@ -217,7 +217,7 @@ class LifeGenerator extends Base
     {
         $message = print_r($data, true);
 
-        $message .= preg_replace(self::REGEX_AMOUNT_FORMAT, self::CURRENCY_SIGN . '$1K', $data);
+        $message .= preg_replace(self::REGEX_AMOUNT_FORMAT, self::CURRENCY_SIGN . '$1K', $message);
 
         return $message;
     }
