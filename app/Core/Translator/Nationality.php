@@ -32,7 +32,10 @@ class Nationality
 
     public function __construct(string $nationalityCode)
     {
-        if (strlen($nationalityCode) !== self::NATIONALITY_CODE_LENGTH) {
+        if (
+            empty(self::$nationalityNames[$nationalityCode]) ||
+            strlen($nationalityCode) !== self::NATIONALITY_CODE_LENGTH
+        ) {
             throw new InvalidFormatException(sprintf('%s is an invalid nationality code.', $nationalityCode));
         }
 

@@ -32,7 +32,10 @@ class Country
 
     public function __construct(string $countryCode)
     {
-        if (strlen($countryCode) !== self::COUNTRY_CODE_LENGTH) {
+        if (
+            empty(self::$countryNames[$countryCode]) ||
+            strlen($countryCode) !== self::COUNTRY_CODE_LENGTH
+        ) {
             throw new InvalidFormatException(sprintf('%s is an invalid country code.', $countryCode));
         }
 
