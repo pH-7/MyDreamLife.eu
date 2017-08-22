@@ -21,12 +21,12 @@ class NationalityTest extends TestCase
     }
 
     /**
-     * @param mixed $nationalityCode
+     * @param string $nationalityCode
      *
      * @dataProvider invalidNationalityCodesProvider
      * @expectedException \Core\Translator\Exception\InvalidFormatException
      */
-    public function testInvalidValue($nationalityCode): void
+    public function testInvalidValue(string $nationalityCode): void
     {
         new Nationality($nationalityCode);
     }
