@@ -17,6 +17,9 @@
             <button type="submit" name="destination" value="oceania" class="waves-effect btn-large">Oceania</button>
         </div>
         <div class="destination">
+            <button type="submit" name="destination" value="japan-korea" class="waves-effect btn-large">Japan/South Korea</button>
+        </div>
+        <div class="destination">
             <button type="submit" name="destination" value="south-america" class="waves-effect btn-large">South
                 America
             </button>
