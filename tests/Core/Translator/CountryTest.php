@@ -24,6 +24,7 @@ class CountryTest extends TestCase
      * @param string $countryCode
      *
      * @dataProvider invalidCountryCodesProvider
+     *
      * @expectedException \Core\Translator\Exception\InvalidFormatException
      */
     public function testInvalidValue(string $countryCode): void
