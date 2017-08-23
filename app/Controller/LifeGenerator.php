@@ -223,13 +223,15 @@ class LifeGenerator extends Base
 
     private function getItineraryResults(array $vars): string
     {
+        $emailTemplate = $this->getItineraryTemplate();
+
         $emailContents = (new ItineraryTranslator($vars, $emailTemplate))->generate();
 
         $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
         $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Your New Life Itinerary</a>';
         $message .= '</div>';
 
-        $message .= $this->getTemplateItinerary();
+        $message .= $emailContents;
 
         $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
         $message .= '<small>You are receiving this email because you made an application on "' . SITE_URL . '" with this email address.</small>';
@@ -238,7 +240,7 @@ class LifeGenerator extends Base
         return $message;
     }
 
-    private function getTemplateItinerary(): string
+    private function getItineraryTemplate(): string
     {
         return nl2br(file_get_contents(self::ITINERARY_EMAIL_TPL_PATH));
     }
