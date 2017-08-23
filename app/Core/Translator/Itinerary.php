@@ -54,6 +54,7 @@ class Itinerary
         $nationality = new Nationality($this->userData['nationality']);
         $nationalityCountry = new Country($this->userData['nationality']);
         $residencyCountry = new Country($this->userData['residence']);
+        $lifestyle = new Lifestyle($this->userData['lifestyle-topic']);
         $training = $this->isHighLevelDestination ? self::TRAINING_WORDING : '';
 
         $templateVariables = [
@@ -61,7 +62,8 @@ class Itinerary
             Variables::NATIONALITY_COUNTRY,
             Variables::RESIDENCY_COUNTRY,
             Variables::DESTINATION_AREA,
-            Variables::TRAINING_NEEDED
+            Variables::LIFESTYLE,
+            Variables::TRAINING_NEEDED,
         ];
 
         $userValues = [
@@ -69,6 +71,7 @@ class Itinerary
             $nationalityCountry->getValue(),
             $residencyCountry->getValue(),
             $this->userData['destination'],
+            $lifestyle->getValue(),
             $training
         ];
 
