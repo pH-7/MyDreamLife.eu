@@ -20,11 +20,13 @@ class Page extends Base
     /** @var array */
     private $posts = [
         1 => [
+            'uri' => 'easiest-way-to-work-abroad',
             'title' => 'Easiest Way To Work Abroad! Working Holiday Visa',
             'vimeoId' => 230046783,
             'description' => 'Work in New Zealand with the WHV.'
         ],
         2 => [
+            'uri' => 'working-in-japan',
             'title' => 'Working In Japan',
             'vimeoId' => 160301271,
             'description' => 'Go Living and Working in Japan, in Tokyo, Kyoto, Osaka can definitely be the best experience of your life! Do NOT Procrastinate!'
@@ -34,6 +36,7 @@ class Page extends Base
     public function __construct()
     {
         $this->posts[] = [
+            'uri' => 'how-to-open-a-bank-account-in-ireland',
             'title' => 'How To Open a Bank Account in Ireland',
             'imageUrl' => 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&auto=format&fit=crop&w=600&h=400&q=80',
             'description' => $this->getPostFromTxtData('how-to-open-bank-account-in-ireland')
