@@ -12,6 +12,8 @@ class View
      * @param string $view
      * @param string $title
      * @param array $data
+     *
+     * @throws RuntimeException
      */
     public static function create(string $view, string $title = '', array $data = array()): void
     {

@@ -30,6 +30,11 @@ class Country
         'ch' => 'Switzerland'
     ];
 
+    /**
+     * @param string $countryCode
+     *
+     * @throws InvalidFormatException
+     */
     public function __construct(string $countryCode)
     {
         if (
