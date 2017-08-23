@@ -40,5 +40,6 @@
 @leeching.net
 @thraml.com
 @mvrht.com
+@rediffmail.com
 @test.com
 @sd.com
