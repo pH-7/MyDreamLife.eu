@@ -7,7 +7,7 @@ Your saving is not that much... so for that reason I excluded London and Dublin 
 
 Since you are a [NATIONALITY], you might be [NATIONALITY] native (or having a basic level at least...).
 
-Because you prefer [LIFESTYLE], the place I found for you is definitely {THE DESTINATION PLACE}. Most of the companies there also speak English (if your German is not that good) and they do have a lot of job positions for you.
+Because you prefer [LIFESTYLE], the place I found for you is definitely <strong>{THE DESTINATION PLACE}</strong>. Most of the companies there also speak English (if your German is not that good) and they do have a lot of job positions for you.
 
 
 I already found a job for you with Visa Sponrshonship https://smava.softgarden.io/job/1232176?l=en (most of the companies do first a Skype Interview).
