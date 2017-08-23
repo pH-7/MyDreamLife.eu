@@ -31,9 +31,7 @@ class Lifestyle
      */
     public function __construct(string $lifestyle)
     {
-        if (
-            empty(self::$lifestyleNames[$lifestyle])
-        ) {
+        if (empty(self::$lifestyleNames[$lifestyle])) {
             throw new InvalidFormatException(sprintf('%s is an invalid lifestyle type.', $lifestyle));
         }
 
