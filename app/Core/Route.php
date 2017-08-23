@@ -10,6 +10,8 @@ declare(strict_types = 1);
 namespace Core;
 
 use Controller\Base as BaseController;
+use InvalidArgumentException;
+use RuntimeException;
 
 class Route
 {
