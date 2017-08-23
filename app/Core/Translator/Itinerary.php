@@ -54,7 +54,7 @@ class Itinerary
         $nationality = new Nationality($this->userData['nationality']);
         $nationalityCountry = new Country($this->userData['nationality']);
         $residencyCountry = new Country($this->userData['residence']);
-        $lifestyle = new Lifestyle($this->userData['lifestyle-topic']);
+        $lifestyle = new Lifestyle($this->userData['lifestyle']);
         $training = $this->isHighLevelDestination ? self::TRAINING_WORDING : '';
 
         $templateVariables = [
