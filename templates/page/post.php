@@ -1,5 +1,5 @@
 <section class="center bottom-margin">
-    <h3><?php echo $title ?></h3>
+    <h2><?php echo $title ?></h2>
     <article>
         <?php if (isset($vimeoId)):
             include 'vimeo-embed.inc.php';
