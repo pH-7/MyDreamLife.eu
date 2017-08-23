@@ -14,6 +14,9 @@ use Core\View;
 
 class Page extends Base
 {
+    const POST_DATA_PATH = 'app/data/posts/en/';
+    const POST_FILE_EXT = '.txt';
+
     /** @var array */
     private $posts = [
         1 => [
@@ -27,6 +30,15 @@ class Page extends Base
             'description' => 'Go Living and Working in Japan, in Tokyo, Kyoto, Osaka can definitely be the best experience of your life! Do NOT Procrastinate!'
         ],
     ];
+
+    public function __construct()
+    {
+        $this->posts[] = [
+            'title' => 'How To Open a Bank Account in Ireland',
+            'imageUrl' => 'https://unsplash.com/...',
+            'description' => $this->getPostFromTxtData('how-to-open-bank-in-ireland')
+        ];
+    }
 
     public function about(): void
     {
@@ -47,5 +59,10 @@ class Page extends Base
         } else {
             (new Base)->notFound();
         }
+    }
+
+    private function getPostFromTxtData(string $filename)
+    {
+        return nl2br(file_get_contents(self::POST_DATA_PATH . $filename . self::POST_FILE_EXT));
     }
 }
