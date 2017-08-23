@@ -59,3 +59,7 @@ abbr {
 .hidden, .nofield {
     display: none;
 }
+
+img, video, iframe {
+    max-width: 100%;
+}
