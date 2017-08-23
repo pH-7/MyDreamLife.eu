@@ -35,8 +35,8 @@ class Page extends Base
     {
         $this->posts[] = [
             'title' => 'How To Open a Bank Account in Ireland',
-            'imageUrl' => 'https://unsplash.com/...',
-            'description' => $this->getPostFromTxtData('how-to-open-bank-in-ireland')
+            'imageUrl' => 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&auto=format&fit=crop&w=600&h=400&q=80',
+            'description' => $this->getPostFromTxtData('how-to-open-bank-account-in-ireland')
         ];
     }
 
