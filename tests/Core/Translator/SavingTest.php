@@ -14,12 +14,12 @@ use PHPUnit\Framework\TestCase;
 
 class SavingTest extends TestCase
 {
-  /**
-   * @param int $savingAmount
-   * @param string $savingEstimation
-   *
-   * @dataProvider validSavingsProvider
-   */
+    /**
+     * @param int $savingAmount
+     * @param string $savingEstimation
+     *
+     * @dataProvider validSavingsProvider
+     */
     public function testValidSaving(int $savingAmount, string $savingEstimation): void
     {
         $saving = new Saving($savingAmount);
@@ -33,11 +33,11 @@ class SavingTest extends TestCase
      *
      * @dataProvider validSavingsProvider
      */
-      public function testSavingScore(int $savingAmount, string $savingEstimation, int $savingScore): void
-      {
-          $saving = new Saving($savingAmount);
-          $this->assertSame($savingScore, $saving->getSavingScore());
-      }
+    public function testSavingScore(int $savingAmount, string $savingEstimation, int $savingScore): void
+    {
+        $saving = new Saving($savingAmount);
+        $this->assertSame($savingScore, $saving->getSavingScore());
+    }
 
     /**
      * @param int $savingAmount
