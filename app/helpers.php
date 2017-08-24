@@ -16,13 +16,9 @@ function site_url(string $var = ''): string
     return SITE_URL;
 }
 
-function asset_url(string $var = ''): string
+function asset_url(string $var): string
 {
-    if (!empty($var)) {
-        return SITE_URL . $var;
-    }
-
-    return SITE_URL . 'assets/';
+    return SITE_URL . 'assets/' . $var;
 }
 
 function redirect(string $url): void
