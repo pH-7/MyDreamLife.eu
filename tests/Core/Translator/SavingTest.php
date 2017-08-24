@@ -57,11 +57,11 @@ class SavingTest extends TestCase
             [1000, 'very small', Saving::SCORE_POOR],
             [3000, 'not that much', Saving::SCORE_POOR],
             [6000, 'not too bad', Saving::SCORE_OK],
-            [10000 => 'ok', Saving::SCORE_OK],
-            [15000 => 'good', Saving::SCORE_OK],
-            [20000 => 'very good', Saving::SCORE_VERY_GOOD],
-            [40000 => 'perfect', Saving::SCORE_VERY_GOOD],
-            [50000 => 'really good', Saving::SCORE_EXCELLENT]
+            [10000, 'ok', Saving::SCORE_OK],
+            [15000, 'good', Saving::SCORE_OK],
+            [20000, 'very good', Saving::SCORE_VERY_GOOD],
+            [40000, 'perfect', Saving::SCORE_VERY_GOOD],
+            [50000, 'really good', Saving::SCORE_EXCELLENT]
         ];
     }
 
