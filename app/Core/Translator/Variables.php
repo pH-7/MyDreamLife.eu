@@ -17,4 +17,5 @@ class Variables
     const DESTINATION_AREA = '[DESTINATION_AREA]';
     const TRAINING_NEEDED = '[TRAINING_DIPLOMAS_NEEDED]';
     const LIFESTYLE = '[LIFESTYLE]';
+    const SAVING = '[SAVING_AMOUNT]';
 }
