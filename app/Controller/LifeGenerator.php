@@ -227,7 +227,7 @@ class LifeGenerator extends Base
 
         $emailContents = (new ItineraryTranslator($vars, $emailTemplate))->generate();
 
-        $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
+        $message = '<div style="width: 100%; background-color: #ee6e73; padding: 20px; margin-bottom: 20px; text-align: center;">';
         $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Your New Life Itinerary</a>';
         $message .= '</div>';
 
