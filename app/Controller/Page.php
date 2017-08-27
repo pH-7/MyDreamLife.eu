@@ -10,8 +10,8 @@ declare(strict_types = 1);
 namespace Controller;
 
 use Core\Input;
-use Core\Unsplash;
 use Core\View;
+use PH7\Image\Unsplash;
 
 class Page extends Base
 {
@@ -47,7 +47,8 @@ class Page extends Base
             'description' => $this->getPostFromTxtData('how-to-open-bank-account-in-ireland')
         ];
 
-        $unsplash->setImageId('photo-1462045504115-6c1d931f07d1');
+        $unsplash->setImageId('photo-1500045992661-f978470eaf7b');
+        $unsplash->setFit(Unsplash::MAX_FIT);
         $this->posts[] = [
             'uri' => 'how-to-work-in-switzerland',
             'title' => 'How To Work in Switzerland',

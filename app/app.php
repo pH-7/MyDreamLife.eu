@@ -12,6 +12,7 @@ define('APP_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 require 'config/site.php';
 require 'helpers.php';
+require 'vendor/autoload.php';
 
 if (DEBUG_MODE) {
     error_reporting(E_ALL);
