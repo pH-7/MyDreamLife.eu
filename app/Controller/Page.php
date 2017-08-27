@@ -10,6 +10,7 @@ declare(strict_types = 1);
 namespace Controller;
 
 use Core\Input;
+use Core\Unsplash;
 use Core\View;
 
 class Page extends Base
@@ -35,11 +36,23 @@ class Page extends Base
 
     public function __construct()
     {
+        // Initiate default options
+        $unsplash = (new Unsplash())->setWidth(600)->setHeight(400);
+
+        $unsplash->setImageId('photo-1462045504115-6c1d931f07d1');
         $this->posts[] = [
             'uri' => 'how-to-open-a-bank-account-in-ireland',
             'title' => 'How To Open a Bank Account in Ireland',
-            'imageUrl' => 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&auto=format&fit=crop&w=600&h=400&q=80',
+            'imageUrl' => $unsplash->getImage(),
             'description' => $this->getPostFromTxtData('how-to-open-bank-account-in-ireland')
+        ];
+
+        $unsplash->setImageId('photo-1462045504115-6c1d931f07d1');
+        $this->posts[] = [
+            'uri' => 'how-to-work-in-switzerland',
+            'title' => 'How To Work in Switzerland',
+            'imageUrl' => $unsplash->getImage(),
+            'description' => $this->getPostFromTxtData('how-to-work-in-switzerland')
         ];
     }
 
