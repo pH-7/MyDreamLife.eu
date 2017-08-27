@@ -21,7 +21,6 @@ class Page extends Base
     private const HEIGHT_IMAGE = 300;
     private const WIDTH_IMAGE = 650;
 
-
     /** @var array */
     private $posts = [
         1 => [
