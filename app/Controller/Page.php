@@ -15,8 +15,12 @@ use PH7\Image\Unsplash;
 
 class Page extends Base
 {
-    const POST_DATA_PATH = 'app/data/posts/en/';
-    const POST_FILE_EXT = '.txt';
+    private const POST_DATA_PATH = 'app/data/posts/en/';
+    private const POST_FILE_EXT = '.txt';
+
+    private const HEIGHT_IMAGE = 300;
+    private const WIDTH_IMAGE = 650;
+
 
     /** @var array */
     private $posts = [
@@ -37,7 +41,7 @@ class Page extends Base
     public function __construct()
     {
         // Initiate default options
-        $unsplash = (new Unsplash())->setWidth(600)->setHeight(400);
+        $unsplash = (new Unsplash())->setWidth(self::WIDTH_IMAGE)->setHeight(self::HEIGHT_IMAGE);
 
         $unsplash->setImageId('photo-1462045504115-6c1d931f07d1');
         $this->posts[] = [
