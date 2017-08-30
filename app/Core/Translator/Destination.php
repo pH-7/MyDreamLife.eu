@@ -18,6 +18,8 @@ class Destination
         'asia' => 'Asia',
         'west-europe' =>'Western Europe',
         'east-europe' => 'Eastern Europe',
+        'north-europe' =>'Northern Europe',
+        'baltic-europe' => 'Baltic States',
         'oceania' => 'Oceania',
         'japan-korea' => 'Japan/South Korea',
         'south-america' => 'South America',

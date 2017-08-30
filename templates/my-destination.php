@@ -14,6 +14,14 @@
             </button>
         </div>
         <div class="destination">
+            <button type="submit" name="destination" value="north-europe" class="waves-effect btn-large">Northern Europe
+            </button>
+        </div>
+        <div class="destination">
+            <button type="submit" name="destination" value="baltic-europe" class="waves-effect btn-large">Baltic States
+            </button>
+        </div>
+        <div class="destination">
             <button type="submit" name="destination" value="oceania" class="waves-effect btn-large">Oceania</button>
         </div>
         <div class="destination">
