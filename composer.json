@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "ph-7/image-unsplash": "^2.0"
+    "ph-7/image-unsplash": "^3.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.3"
