@@ -32,11 +32,14 @@
               <div class="col l5 s12">
                   Made with ♥ by <a class="orange-text text-lighten-3" href="http://ph7.me">Pierre-Henry</a>
               </div>
-              <div class="col l5 s12">
+              <div class="col l4 s12">
                   Proud to be an <a class="orange-text text-lighten-3" href="https://github.com/pH-7/MyDreamLife.eu">open source project</a>!
               </div>
               <div class="col l1 s12">
                   <a class="orange-text text-lighten-3" href="<?php echo site_url('posts') ?>">Posts</a>
+              </div>
+              <div class="col l1 s12">
+                  <a class="orange-text text-lighten-3" rel="nofollow noopener" target="_blank" href="<?php echo site_url('podcast') ?>">Podcasts</a>
               </div>
               <div class="col l1 s12">
                   <a class="orange-text text-lighten-3" rel="nofollow" href="mailto:hi@ph7.me?subject=Regarding MyNewDream">Contact</a>
