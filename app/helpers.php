@@ -21,8 +21,12 @@ function asset_url(string $var): string
     return SITE_URL . 'assets/' . $var;
 }
 
-function redirect(string $url): void
+function redirect(string $url, bool $permanent = true): void
 {
+    if ($permanent) {
+        header('HTTP/1.1 301 Moved Permanently');
+    }
+
     if (strpos($url, 'http') === false) {
         $url = SITE_URL . $url;
     }
