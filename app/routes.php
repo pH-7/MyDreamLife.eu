@@ -25,4 +25,6 @@ Route::get('/about', 'Page@about');
 Route::get('/posts', 'Page@posts');
 Route::get('/post', 'Page@post');
 
+// Redirection
 Route::location('/apps', 'https://docs.google.com/document/d/1HU1dUSix37K1f6COKQkMcDLeE72RZK8Y1yP8EFO8L30/');
+Route::location('/podcast', 'https://itunes.apple.com/us/podcast/tropical-mba-location-independent-entrepreneurship/id325757845');
