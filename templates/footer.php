@@ -39,7 +39,7 @@
                   <a class="orange-text text-lighten-3" href="<?php echo site_url('posts') ?>">Posts</a>
               </div>
               <div class="col l1 s4">
-                  <a class="orange-text text-lighten-3" rel="nofollow noopener" target="_blank" href="<?php echo site_url('podcast') ?>">Podcasts</a>
+                  <a class="orange-text text-lighten-3" rel="nofollow noopener" target="_blank" href="<?php echo site_url('podcast') ?>" title="The Tropical MBA Podcast">Podcast</a>
               </div>
               <div class="col l1 s4">
                   <a class="orange-text text-lighten-3" rel="nofollow" href="mailto:hi@ph7.me?subject=Regarding MyNewDream">Contact</a>
