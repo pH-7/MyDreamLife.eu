@@ -23,6 +23,10 @@
   <nav class="light-orange lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="<?php echo site_url() ?>" class="brand-logo">MyNewDream.EU</a>
+      <ul id="nav-mobile" class="right">
+        <li><a "<?php echo site_url() ?>">Home</a></li>
+        <li><a href="<?php echo site_url('forum') ?>" class="yellow-text">Forum</a></li>
+      </ul>
     </div>
   </nav>
 
