@@ -37,7 +37,7 @@ class Itinerary
         $this->userData = $userData;
         $this->templateContents = $templateContents;
 
-        if (in_array($this->userData['destination'], self::HIGH_LEVEL_DESTINATIONS)) {
+        if (in_array($this->userData['destination'], self::HIGH_LEVEL_DESTINATIONS, true)) {
             $this->isHighLevelDestination = true;
         }
     }
