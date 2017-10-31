@@ -35,7 +35,7 @@
           <h2 class="header center orange-text">Get A Dream Life - Dream Life Builder</h2>
           <div class="row center">
             <h5 class="header col s12 light">Build A New Life, Step-by-Step</h5>
-              <h6>The FIRST European Platform that gives a <span class="underline">real full itinerary</span> for starting a new exciting life from scratch</h6>
+            <h6>The FIRST European Platform that gives a <span class="underline">real full itinerary</span> for starting a new exciting life from scratch</h6>
           </div>
         </div>
       </header>
