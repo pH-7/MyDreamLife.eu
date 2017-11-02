@@ -35,12 +35,12 @@ class Main
      *
      * @return string|bool The value
      */
-    public static function get($key, $secondKey = '')
+    public static function get(string $key, string $secondKey = '')
     {
         if (empty($secondKey)) {
             return isset(static::$config[$key]) ? static::$config[$key] : false;
-        } else {
-            return isset(static::$config[$key][$secondKey]) ? static::$config[$key][$secondKey] : false;
         }
+
+        return isset(static::$config[$key][$secondKey]) ? static::$config[$key][$secondKey] : false;
     }
 }
