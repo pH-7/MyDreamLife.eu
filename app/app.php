@@ -23,17 +23,14 @@ if (DEBUG_MODE) {
 }
 
 
-function autoloadClasses(string $className)
-{
+spl_autoload_register(function (string $className) {
     $className = str_replace('\\', '/', $className);
 
     $filename = APP_PATH . $className . '.php';
     if (is_readable($filename)) {
         require $filename;
     }
-}
-
-spl_autoload_register('autoloadClasses');
+});
 
 
 try {
