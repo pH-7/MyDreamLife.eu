@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Core;
 
 use PDO;
+use PDOException;
 
 class Database
 {
