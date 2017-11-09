@@ -49,7 +49,7 @@ class Session
      */
     public static function setCookie(string $name, $value): void
     {
-        setcookie($name, $value, time() + 60 * 60 * 24 * 365, '/', false);
+        setcookie($name, $value, time() + 60 * 60 * 24 * 365, '/');
     }
 
     /**
@@ -59,7 +59,7 @@ class Session
      */
     public static function removeCookie(string $name): void
     {
-        setcookie($name, '', time() - 60 * 60 * 24 * 365, '/', false);
+        setcookie($name, '', time() - 60 * 60 * 24 * 365, '/');
     }
 
     /**
