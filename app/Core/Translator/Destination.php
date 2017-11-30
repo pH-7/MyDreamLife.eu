@@ -13,6 +13,9 @@ use Core\Translator\Exception\InvalidFormatException;
 
 class Destination
 {
+    /** @var string Destination keyword (e.g. asia, north-europe, ...) */
+    private $destination;
+
     /** @var array */
     private static $destinationNames = [
         'asia' => 'Asia',
@@ -35,9 +38,7 @@ class Destination
      */
     public function __construct(string $destination)
     {
-        if (
-            empty(self::$destinationNames[$destination])
-        ) {
+        if (empty(self::$destinationNames[$destination])) {
             throw new InvalidFormatException(sprintf('%s is an invalid destination key.', $destination));
         }
 
