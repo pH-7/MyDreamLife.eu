@@ -286,7 +286,11 @@ class LifeGenerator extends Base
     {
         $unwantedHosts = file(APP_PATH . 'config/unwanted/emails.txt');
 
-        return in_array(strrchr($emailAddress, '@'), array_map('trim', $unwantedHosts), true);
+        return in_array(
+            strrchr($emailAddress, '@'),
+            array_map('trim', $unwantedHosts),
+            true
+        );
     }
 
     private function removeSessions(): void
