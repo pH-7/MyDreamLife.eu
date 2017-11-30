@@ -216,6 +216,7 @@ class LifeGenerator extends Base
     private function generateSmartContents(array $data): string
     {
         $message = print_r($data, true);
+        // Note: "$1" in "$1K" is the regex variable from self::REGEX_AMOUNT_FORMAT regex value
         $message = preg_replace(self::REGEX_AMOUNT_FORMAT, self::CURRENCY_SIGN . '$1K', $message);
 
         return $message;
