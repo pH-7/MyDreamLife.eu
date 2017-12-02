@@ -9,13 +9,14 @@ declare(strict_types = 1);
 
 namespace Controller;
 
+use Core\Session;
 use Core\View;
 
 class Base
 {
     public function __construct()
     {
-        if (session_status() !== PHP_SESSION_ACTIVE) {
+        if (!Session::isActivated()) {
             @session_start();
         }
     }
