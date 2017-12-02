@@ -1,5 +1,5 @@
-/vendor
-/node_modules
+vendor
+node_modules
 composer.lock
 composer.phar
 
@@ -8,6 +8,12 @@ composer.phar
 
 ## Gettext ##
 *.mo
+
+# PHPUnit coverage
+coverage
+
+# PhpStorm
+.idea
 
 ## OS ##
 
@@ -25,6 +31,3 @@ Thumbs.db
 # Mac OS
 .DS_Store*
 ._*
-
-# PhpStorm
-.idea
