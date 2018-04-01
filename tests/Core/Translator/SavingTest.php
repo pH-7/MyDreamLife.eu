@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace Test\Core\Translator;
 
+use Core\Translator\Exception\InvalidFormatException;
 use Core\Translator\Saving;
 use PHPUnit\Framework\TestCase;
 
@@ -42,12 +43,12 @@ class SavingTest extends TestCase
     /**
      * @param int $savingAmount
      *
-     * @expectedException \Core\Translator\Exception\InvalidFormatException
-     *
      * @dataProvider invalidSavingsProvider
      */
     public function testInvalidValue($savingAmount): void
     {
+        $this->expectException(InvalidFormatException::class);
+
         new Saving($savingAmount);
     }
 

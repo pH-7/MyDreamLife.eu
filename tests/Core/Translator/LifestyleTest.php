@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace Test\Core\Translator;
 
+use Core\Translator\Exception\InvalidFormatException;
 use Core\Translator\Lifestyle;
 use PHPUnit\Framework\TestCase;
 
@@ -20,11 +21,10 @@ class LifestyleTest extends TestCase
         $this->assertSame('Adventure', $lifestyle->getValue());
     }
 
-    /**
-     * @expectedException \Core\Translator\Exception\InvalidFormatException
-     */
     public function testInvalidValue(): void
     {
+        $this->expectException(InvalidFormatException::class);
+
         new Lifestyle('blablabla');
     }
 }

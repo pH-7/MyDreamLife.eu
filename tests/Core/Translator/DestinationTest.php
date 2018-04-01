@@ -10,6 +10,7 @@ declare(strict_types = 1);
 namespace Test\Core\Translator;
 
 use Core\Translator\Destination;
+use Core\Translator\Exception\InvalidFormatException;
 use PHPUnit\Framework\TestCase;
 
 class DestinationTest extends TestCase
@@ -20,11 +21,10 @@ class DestinationTest extends TestCase
         $this->assertSame('Asia', $destination->getValue());
     }
 
-    /**
-     * @expectedException \Core\Translator\Exception\InvalidFormatException
-     */
     public function testInvalidValue(): void
     {
+        $this->expectException(InvalidFormatException::class);
+
         new Destination('Continent');
     }
 }

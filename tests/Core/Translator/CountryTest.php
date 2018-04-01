@@ -10,6 +10,7 @@ declare(strict_types = 1);
 namespace Test\Core\Translator;
 
 use Core\Translator\Country;
+use Core\Translator\Exception\InvalidFormatException;
 use PHPUnit\Framework\TestCase;
 
 class CountryTest extends TestCase
@@ -24,11 +25,11 @@ class CountryTest extends TestCase
      * @param string $countryCode
      *
      * @dataProvider invalidCountryCodesProvider
-     *
-     * @expectedException \Core\Translator\Exception\InvalidFormatException
      */
     public function testInvalidValue(string $countryCode): void
     {
+        $this->expectException(InvalidFormatException::class);
+
         new Country($countryCode);
     }
 
