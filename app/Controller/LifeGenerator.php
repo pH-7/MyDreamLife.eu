@@ -16,12 +16,12 @@ use Core\View;
 
 class LifeGenerator extends Base
 {
-    const MAX_EMAIL_LENGTH = 120;
-    const MAX_FIELD_VALUE_LENGTH = 20;
-    const COOKIE_NAME_APPLICATION_SENT = 'application_submitted';
-    const ITINERARY_EMAIL_TPL_PATH = 'templates/emails/en/itinerary.txt';
-    const REGEX_AMOUNT_FORMAT = '/(\d{1,2})\d{3}\s/';
-    const CURRENCY_SIGN = '€';
+    private const MAX_EMAIL_LENGTH = 120;
+    private const MAX_FIELD_VALUE_LENGTH = 20;
+    private const COOKIE_NAME_APPLICATION_SENT = 'application_submitted';
+    private const ITINERARY_EMAIL_TPL_PATH = 'templates/emails/en/itinerary.txt';
+    private const REGEX_AMOUNT_FORMAT = '/(\d{1,2})\d{3}\s/';
+    private const CURRENCY_SIGN = '€';
 
     public function __construct()
     {

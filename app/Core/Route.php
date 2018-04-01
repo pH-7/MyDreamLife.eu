@@ -15,12 +15,12 @@ use RuntimeException;
 
 class Route
 {
-    const CONTROLLER_NAMESPACE = 'Controller\\';
+    public const GET_METHOD = 'GET';
+    public const POST_METHOD = 'POST';
+    public const PUT_METHOD = 'PUT';
+    public const DELETE_METHOD = 'DELETE';
 
-    const GET_METHOD = 'GET';
-    const POST_METHOD = 'POST';
-    const PUT_METHOD = 'PUT';
-    const DELETE_METHOD = 'DELETE';
+    private const CONTROLLER_NAMESPACE = 'Controller\\';
 
     private static $httpMethod = self::GET_METHOD;
 
