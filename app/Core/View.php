@@ -8,6 +8,9 @@ use RuntimeException;
 
 class View
 {
+    public const PARTIALS_ENABLED = true;
+    public const PARTIALS_DISABLED = false;
+
     /**
      * @param string $view
      * @param string $title
@@ -15,19 +18,24 @@ class View
      *
      * @throws RuntimeException
      */
-    public static function create(string $view, string $title = '', array $data = array()): void
+    public static function create(string $view, string $title = '', array $data = array(), bool $paritals = self::PARTIALS_DISABLED): void
     {
         extract($data);
 
-        include 'templates/header.php';
+        if (!$paritals) {
+            include 'templates/header.php';
+        }
 
         $viewFullPath = 'templates/' . $view . '.php';
         if (is_file($viewFullPath)) {
             include $viewFullPath;
         } else {
-            throw new RuntimeException('Could not find view: "' . $viewFullPath . '"');
+            $errorMessage = sprintf('Could not find view: "%s"', $viewFullPath);
+            throw new RuntimeException($errorMessage);
         }
 
-        include 'templates/footer.php';
+        if (!$paritals) {
+            include 'templates/footer.php';
+        }
     }
 }
