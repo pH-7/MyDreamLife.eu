@@ -5,7 +5,7 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Core\Translator;
 
@@ -24,7 +24,7 @@ class Saving
     /** @var array */
     private static $savingEstimations = [
         1000 => 'very small',
-        3000 =>'not that much',
+        3000 => 'not that much',
         6000 => 'not too bad',
         10000 => 'ok',
         15000 => 'good',

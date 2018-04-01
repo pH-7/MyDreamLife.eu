@@ -5,7 +5,7 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Core\Translator;
 
@@ -19,9 +19,9 @@ class Destination
     /** @var array */
     private static $destinationNames = [
         'asia' => 'Asia',
-        'west-europe' =>'Western Europe',
+        'west-europe' => 'Western Europe',
         'east-europe' => 'Eastern Europe',
-        'north-europe' =>'Northern Europe',
+        'north-europe' => 'Northern Europe',
         'baltic-europe' => 'Baltic States',
         'oceania' => 'Oceania',
         'japan-korea' => 'Japan/South Korea',

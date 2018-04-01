@@ -5,7 +5,7 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Core\Translator;
 
@@ -21,7 +21,7 @@ class Country
     /** @var array */
     private static $countryNames = [
         'fr' => 'France',
-        'es' =>'Spain',
+        'es' => 'Spain',
         'de' => 'Germany',
         'be' => 'Belgium',
         'nl' => 'Netherlands',

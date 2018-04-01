@@ -5,7 +5,7 @@
  * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Core\Translator;
 
@@ -19,7 +19,7 @@ class Lifestyle
     /** @var array */
     private static $lifestyleNames = [
         'big-cities' => 'Big Cities',
-        'adventure' =>'Adventure',
+        'adventure' => 'Adventure',
         'nature' => 'Nature',
         'nightlife' => 'Nightlife, Bars, ...',
     ];
