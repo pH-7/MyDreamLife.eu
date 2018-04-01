@@ -11,11 +11,11 @@ namespace Core\Translator;
 
 class Variables
 {
-    const NATIONALITY = '[NATIONALITY]';
-    const NATIONALITY_COUNTRY = '[NATIONALITY_COUNTRY]';
-    const RESIDENCY_COUNTRY = '[RESIDENCY_COUNTRY]';
-    const DESTINATION_AREA = '[DESTINATION_AREA]';
-    const TRAINING_NEEDED = '[TRAINING_DIPLOMAS_NEEDED]';
-    const LIFESTYLE = '[LIFESTYLE]';
-    const SAVING = '[SAVING_AMOUNT]';
+    public const NATIONALITY = '[NATIONALITY]';
+    public const NATIONALITY_COUNTRY = '[NATIONALITY_COUNTRY]';
+    public const RESIDENCY_COUNTRY = '[RESIDENCY_COUNTRY]';
+    public const DESTINATION_AREA = '[DESTINATION_AREA]';
+    public const TRAINING_NEEDED = '[TRAINING_DIPLOMAS_NEEDED]';
+    public const LIFESTYLE = '[LIFESTYLE]';
+    public const SAVING = '[SAVING_AMOUNT]';
 }

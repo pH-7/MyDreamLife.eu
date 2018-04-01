@@ -11,9 +11,9 @@ namespace Core\Translator;
 
 class Itinerary
 {
-    const TRAINING_WORDING = "I highly advice you to take some trainings (have a look to Coursera/Audacity websites and read syllabus/books for courses in your field) in order to become THE BEST and get VISA Sponsorship accepted. If you aren't the best, there are lot of chance you don't get your visa";
+    private const TRAINING_WORDING = "I highly advice you to take some trainings (have a look to Coursera/Audacity websites and read syllabus/books for courses in your field) in order to become THE BEST and get VISA Sponsorship accepted. If you aren't the best, there are lot of chance you don't get your visa";
 
-    const HIGH_LEVEL_DESTINATIONS = [
+    private const HIGH_LEVEL_DESTINATIONS = [
         'japan-korea',
         'north-america',
         'oceania'

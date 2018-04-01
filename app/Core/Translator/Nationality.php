@@ -13,7 +13,7 @@ use Core\Translator\Exception\InvalidFormatException;
 
 class Nationality
 {
-    const NATIONALITY_CODE_LENGTH = 2;
+    private const NATIONALITY_CODE_LENGTH = 2;
 
     /** @var string */
     private $nationalityCode;

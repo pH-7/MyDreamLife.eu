@@ -13,10 +13,10 @@ use Core\Translator\Exception\InvalidFormatException;
 
 class Saving
 {
-    const SCORE_POOR = 1;
-    const SCORE_OK = 2;
-    const SCORE_VERY_GOOD = 3;
-    const SCORE_EXCELLENT = 4;
+    public const SCORE_POOR = 1;
+    public const SCORE_OK = 2;
+    public const SCORE_VERY_GOOD = 3;
+    public const SCORE_EXCELLENT = 4;
 
     /** @var int */
     private $savingAmount;

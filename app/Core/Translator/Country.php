@@ -13,7 +13,7 @@ use Core\Translator\Exception\InvalidFormatException;
 
 class Country
 {
-    const COUNTRY_CODE_LENGTH = 2;
+    private const COUNTRY_CODE_LENGTH = 2;
 
     /** @var string */
     private $countryCode;
