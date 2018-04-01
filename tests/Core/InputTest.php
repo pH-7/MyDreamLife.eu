@@ -38,7 +38,7 @@ class InputTest extends TestCase
         $this->assertFalse(Input::get('lalala'));
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($_POST, $_GET);
     }
