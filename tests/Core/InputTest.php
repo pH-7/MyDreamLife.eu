@@ -7,7 +7,7 @@
 
 declare(strict_types = 1);
 
-namespace Test\Core\Input;
+namespace Test\Core;
 
 use Core\Input;
 use PHPUnit\Framework\TestCase;
