@@ -21,6 +21,7 @@ class Route
     public const DELETE_METHOD = 'DELETE';
 
     private const CONTROLLER_NAMESPACE = 'Controller\\';
+    private const SEPARATOR = '@';
 
     private static $httpMethod = self::GET_METHOD;
 
@@ -67,11 +68,10 @@ class Route
                     (new BaseController)->notFound();
                 }
 
-                $split = explode('@', $value);
-                $className = self::CONTROLLER_NAMESPACE . $split[0];
-                $method = $split[1];
+                $ctrlDetails = self::getClassAndMethod($value);
+                $class = new $ctrlDetails['class'];
+                $method = $ctrlDetails['method'];
 
-                $class = new $className;
                 if (method_exists($class, $method)) {
                     foreach ($params as $k => $v) {
                         $params[$k] = str_replace('/', '', $v);
@@ -84,8 +84,17 @@ class Route
         }
     }
 
+    private static function getClassAndMethod(string $classMethod): array
+    {
+        $split = explode(self::SEPARATOR, $classMethod);
+        $class = self::CONTROLLER_NAMESPACE . $split[0];
+        $method = $split[1];
+
+        return ['class' => $class, 'method' => $method];
+    }
+
     private static function isController(string $method): bool
     {
-        return strpos($method, '@') !== false;
+        return strpos($method, self::SEPARATOR) !== false;
     }
 }
