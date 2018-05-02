@@ -74,10 +74,8 @@ class Route
                 $method = $ctrlDetails['method'];
 
                 if (method_exists($class, $method)) {
-                    foreach ($params as $k => $v) {
-                        $params[$k] = str_replace('/', '', $v);
-                    }
-                    return call_user_func_array(array($class, $method), $params);
+                    $params = self::getActionParameters($params);
+                    return call_user_func_array([$class, $method], $params);
                 }
             }
             //throw new RuntimeException('Method "' . $method . '" was not found in "' . $class . '" class.');
@@ -97,5 +95,13 @@ class Route
     private static function isController(string $method): bool
     {
         return strpos($method, self::SEPARATOR) !== false;
+    }
+
+    private static function getActionParameters(array $params): array
+    {
+        foreach ($params as $key => $val) {
+            $params[$key] = str_replace('/', '', $val);
+        }
+        return $params;
     }
 }
