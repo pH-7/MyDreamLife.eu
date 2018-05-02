@@ -23,6 +23,7 @@ class Route
     private const CONTROLLER_NAMESPACE = 'Controller\\';
     private const SEPARATOR = '@';
 
+    /** @var string */
     private static $httpMethod = self::GET_METHOD;
 
     public static function get(string $uri, string $classMethod = ''): void
