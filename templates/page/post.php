@@ -13,7 +13,9 @@
         </p>
 
         <div class="post-button">
-            <a href="<?php echo site_url() ?>" class="waves-effect orange-light btn-large">Get Your OWN Itinerary</a>
+            <a href="<?php echo site_url() ?>" class="waves-effect orange-light btn-large">
+                Get Your OWN Itinerary
+            </a>
         </div>
     </article>
 </section>
