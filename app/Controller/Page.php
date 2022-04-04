@@ -47,7 +47,7 @@ class Page extends Base
             'uri' => 'how-to-open-a-bank-account-in-ireland',
             'title' => 'How To Open a Bank Account in Ireland',
             'imageUrl' => $unsplash->getImage(),
-            'description' => $this->getPostFromTxtData('how-to-open-bank-account-in-ireland')
+            'description' => $this->getPostFromTextFile('how-to-open-bank-account-in-ireland')
         ];
 
         $unsplash->setImageId('photo-1500045992661-f978470eaf7b');
@@ -56,7 +56,7 @@ class Page extends Base
             'uri' => 'how-to-work-in-switzerland',
             'title' => 'How To Work in Switzerland',
             'imageUrl' => $unsplash->getImage(),
-            'description' => $this->getPostFromTxtData('how-to-work-in-switzerland')
+            'description' => $this->getPostFromTextFile('how-to-work-in-switzerland')
         ];
     }
 
@@ -81,7 +81,7 @@ class Page extends Base
         }
     }
 
-    private function getPostFromTxtData(string $filename)
+    private function getPostFromTextFile(string $filename)
     {
         return nl2br(file_get_contents(self::POST_DATA_PATH . $filename . self::POST_FILE_EXT));
     }
