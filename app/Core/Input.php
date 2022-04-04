@@ -11,7 +11,7 @@ class Input
      *
      * @return string The IP address.
      */
-    public static function userIp()
+    public static function userIp(): string
     {
         return $_SERVER['REMOTE_ADDR'];
     }
@@ -21,7 +21,7 @@ class Input
      *
      * @return string The user agent
      */
-    public static function userAgent()
+    public static function userAgent(): string
     {
         return $_SERVER['HTTP_USER_AGENT'];
     }
@@ -33,7 +33,7 @@ class Input
      *
      * @return string|bool
      */
-    public static function post($key)
+    public static function post(string $key)
     {
         return isset($_POST[$key]) ? $_POST[$key] : false;
     }
@@ -45,7 +45,7 @@ class Input
      *
      * @return string|bool
      */
-    public static function get($key)
+    public static function get(string $key)
     {
         return isset($_GET[$key]) ? $_GET[$key] : false;
     }
@@ -57,7 +57,7 @@ class Input
      *
      * @return string|bool
      */
-    public static function clean($key)
+    public static function clean(string $key)
     {
         return trim(addslashes(htmlentities($key)));
     }
