@@ -73,7 +73,7 @@ class Page extends Base
     public function post(): void
     {
         $postId = Input::get('id');
-        if ($postId && ctype_digit($postId) && isset($this->posts[$postId])) {
+        if ($this->doesPostExist($postId)) {
             $postData = $this->posts[$postId];
             View::create('page/post', $postData['title'], $postData);
         } else {
@@ -81,8 +81,13 @@ class Page extends Base
         }
     }
 
-    private function getPostFromTextFile(string $filename)
+    private function getPostFromTextFile(string $filename): string
     {
         return nl2br(file_get_contents(self::POST_DATA_PATH . $filename . self::POST_FILE_EXT));
+    }
+
+    private function doesPostExist(string $postId): bool
+    {
+        return $postId && ctype_digit($postId) && isset($this->posts[$postId]);
     }
 }
