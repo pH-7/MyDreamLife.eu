@@ -5,5 +5,4 @@ define('SITE_URL', 'http://localhost:8888/mydreamlife/'); // Must end by a slash
 define('SITE_NAME', 'MyDreamLife.eu');
 define('ADMIN_EMAIL', 'hi@ph7.me');
 define('DEBUG_MODE', true);
-define('RECAPTCHA_SECRET_KEY', 'YOUR-RECAPTCHA-KEY'); // https://www.google.com/recaptcha/admin
 define('GOOGLE_ANALYTICS_ID', 'UA-<YOUR-GOOGLE-ANALYTICS-ID>'); // https://analytics.google.com
