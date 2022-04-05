@@ -9,7 +9,7 @@ The artificial intelligence of the app will give them, ste-by-step, the whole ma
 
 Although both domain names were available, I distractedly typed a different name (maybe because I was speaking to people and drinking in the same time ...).
 
-After the payment made, I sadly noticed my mistake but it was already too late.. Anyway, "MyDreamLife.eu" is actually "MyNewDream.eu"! There is worse in life!
+After the payment made, I sadly noticed my mistake, but it was already too late... Anyway, "MyDreamLife.eu" is actually "MyNewDream.eu"! There is worse in life!
 
 
 ## Requirements
