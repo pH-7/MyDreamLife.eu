@@ -18,9 +18,19 @@ After the payment made, I sadly noticed my mistake, but it was already too late.
 * **Database** MySQL/MariaDB 5.0.3 or newer
 
 
+## Setting Up
+
+1.Run `composer install` and `npm install` to install the project dependencies.
+2. Create a database and import `database.sql` file.
+3. Update your database details in `app/config/config.php`
+4. Update `app/config/site.php` for the site details.
+
+You are all set! 🚀
+
+
 ## Inventor & Author of MyDreamLife.EU
 
-I'm [Pierre-Henry Soria](http://ph7.me). A passionate software engineer :smiley:
+I'm [Pierre-Henry Soria](https://ph7.me). A passionate software engineer :smiley:
 
 You can contact me at *hi {{AT}} ph7 {{D0T}} me*
 
