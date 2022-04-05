@@ -13,5 +13,4 @@
 
     ga('create', '<?php echo GOOGLE_ANALYTICS_ID; ?>', 'auto');
     ga('send', 'pageview');
-
 </script>
