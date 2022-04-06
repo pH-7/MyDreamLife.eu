@@ -6,6 +6,7 @@ namespace Core;
 
 use PDO;
 use PDOException;
+use stdClass;
 
 class Database
 {
@@ -19,10 +20,8 @@ class Database
      * Establishes a connection.
      *
      * @param array $dbDetails The database details
-     *
-     * @return void
      */
-    public static function connect(array $dbDetails = array())
+    public static function connect(array $dbDetails = array()): void
     {
         try {
             static::$pdo = new PDO('mysql:host=' . $dbDetails['dbHost'] . ';dbname=' . $dbDetails['dbName'], $dbDetails['dbUser'], $dbDetails['dbPass']);
@@ -38,8 +37,6 @@ class Database
      * @param string $sql The SQL to prepare
      * @param array $binds Values to bind to the query
      * @param bool $execute Automatically execute?
-     *
-     * @return void
      */
     public static function query($sql, array $binds = array(), bool $execute = true): void
     {
@@ -67,16 +64,13 @@ class Database
     /**
      * Returns a single row.
      *
-     * @return mixed The row as an object.
+     * @return stdClass|null The row as an object.
      */
-    public static function fetch()
+    public static function fetch(): ?stdClass
     {
-        return static::$stmt->fetch(PDO::FETCH_OBJ);
+        return static::$stmt->fetch(PDO::FETCH_OBJ) ?? null;
     }
 
-    /**
-     * @return string
-     */
     public static function quote(string $string): string
     {
         return static::$pdo->quote($string);
@@ -85,10 +79,10 @@ class Database
     /**
      * Returns all rows
      *
-     * @return stdClass The rows as an object.
+     * @return array|null The rows as an object.
      */
-    public static function fetchAll()
+    public static function fetchAll(): ?array
     {
-        return static::$stmt->fetchAll(PDO::FETCH_OBJ);
+        return static::$stmt->fetchAll(PDO::FETCH_OBJ) ?? null;
     }
 }
