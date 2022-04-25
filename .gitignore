@@ -1,8 +1,10 @@
+# Dependencies
 vendor
 node_modules
 composer.lock
 composer.phar
 
+# Log files
 *.log
 *.tmp
 
