@@ -21,6 +21,7 @@ class Page extends Base
     private const HEIGHT_IMAGE = 300;
     private const WIDTH_IMAGE = 650;
 
+    /* TODO Use typed properties when project supports PHP >=7.4 */
     /** @var array */
     private $posts = [
         1 => [
